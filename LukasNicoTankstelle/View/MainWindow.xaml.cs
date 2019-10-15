@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LukasNicoTankstelle.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace LukasNicoTankstelle
         public MainWindow()
         {
             InitializeComponent();
+            MainWindow_ViewModel mainWindow_ViewModel = new MainWindow_ViewModel();
+            DataContext = mainWindow_ViewModel;
         }
     }
 }

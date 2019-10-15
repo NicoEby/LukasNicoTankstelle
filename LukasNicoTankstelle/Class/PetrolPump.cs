@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace LukasNicoTankstelle.Class
 {
-    class PetrolPump
+    public class PetrolPump
     {
         private string number;
 
         private List<Tap> taps;
+        private double liter = 1;
 
         public string Number
         {
@@ -26,6 +27,14 @@ namespace LukasNicoTankstelle.Class
             set
             {
                 taps = value;
+            }
+        }
+        public double Liter
+        {
+            get { return liter; }
+            set
+            {
+                liter = value;
             }
         }
 
