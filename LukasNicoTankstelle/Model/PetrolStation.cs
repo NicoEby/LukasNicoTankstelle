@@ -98,5 +98,19 @@ namespace LukasNicoTankstelle.Class
             }
             return _instance;
         }
+
+        public List<PetrolPump> GetAllUsedPumps()
+        {
+            List<PetrolPump> usedPetrolPumps = new List<PetrolPump>();
+
+            foreach (PetrolPump pp in PetrolPumps)
+            {
+                if (pp.WasUsed == true)
+                {
+                    usedPetrolPumps.Add(pp);
+                }
+            }
+            return petrolPumps;
+        }
     }
 }

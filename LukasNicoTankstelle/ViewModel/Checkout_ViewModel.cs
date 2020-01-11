@@ -1,6 +1,7 @@
 ﻿using KinoModel.ViewModel;
 using LukasNicoTankstelle.Class;
 using LukasNicoTankstelle.Commands;
+using LukasNicoTankstelle.Commands_Checkout;
 using LukasNicoTankstelle.Model;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,8 @@ namespace LukasNicoTankstelle.ViewModel
         private double paid = 0;
         private ICommand paymentCommand;
         private ICommand creditCardCommand;
+        private ICommand cancelPaymentCommand;
+        private ICommand changeMoneyCommand;
 
 
 
@@ -34,6 +37,16 @@ namespace LukasNicoTankstelle.ViewModel
         {
             get { return creditCardCommand; }
             set { creditCardCommand = value; }
+        }
+        public ICommand CancelPaymentCommand
+        {
+            get { return cancelPaymentCommand; }
+            set { cancelPaymentCommand = value; }
+        }
+        public ICommand ChangeMoneyCommand
+        {
+            get { return changeMoneyCommand; }
+            set { changeMoneyCommand = value; }
         }
 
         public double Cost
@@ -56,7 +69,8 @@ namespace LukasNicoTankstelle.ViewModel
             }
         }
 
-        
+
+
 
 
 
@@ -72,6 +86,8 @@ namespace LukasNicoTankstelle.ViewModel
 
             PaymentCommand = new PaymentCommand(this);
             CreditCardCommand = new CreditCardCommand(this);
+            CancelPaymentCommand = new CancelPaymentCommand(this);
+            ChangeMoneyCommand = new ChangeMoneyCommand(this);
 
 
         }

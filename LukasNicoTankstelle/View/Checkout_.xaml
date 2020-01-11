@@ -91,11 +91,11 @@
 
             </StackPanel>
             <Button Grid.Row="2" Grid.ColumnSpan="2" Margin="0 3 0 3" Command="{Binding CreditCardCommand}">Credit Card</Button>
-            <Button Grid.Row="3" Grid.ColumnSpan="2" Margin="0 3 0 3" > Cancel payment </Button>
+            <Button Grid.Row="3" Grid.ColumnSpan="2" Margin="0 3 0 3" Command="{Binding CancelPaymentCommand}" > Cancel payment </Button>
         </Grid>
 
 
-        <Button Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="5">Bezahlen</Button>
+        <Button Content="Bezahlen" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="5" Command="{Binding ChangeMoneyCommand}" ></Button>
         <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5">Quittung</Button>
 
 

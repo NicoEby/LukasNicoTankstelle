@@ -9,9 +9,11 @@ namespace LukasNicoTankstelle.Class
     public class PetrolPump
     {
         private string number;
+        private Boolean wasUsed;
 
         private List<Tap> taps;
         private double liter = 1;
+        private double amountOwed;
 
         public string Number
         {
@@ -37,6 +39,28 @@ namespace LukasNicoTankstelle.Class
                 liter = value;
             }
         }
+        public Boolean WasUsed
+        {
+            get { return wasUsed; }
+            set
+            {
+                wasUsed = value;
+            }
+        }
+
+        public double AmountOwned
+        {
+            get { return amountOwed; }
+            set
+            {
+                amountOwed = value;
+            }
+        }
+
+
+
+
+
 
         public PetrolPump(string number, List<Tap> taps)
         {
