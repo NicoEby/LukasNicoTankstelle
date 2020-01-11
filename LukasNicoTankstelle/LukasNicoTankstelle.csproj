@@ -56,10 +56,19 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\TankCommand.cs" />
+    <Compile Include="Model\Checkout.cs" />
+    <Compile Include="ViewModel\Checkout_ViewModel.cs" />
     <Compile Include="ViewModel\PetrolPump_ViewModel.cs" />
+    <Compile Include="View\Checkout_.xaml.cs">
+      <DependentUpon>Checkout_.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PetrolPumpView.xaml.cs">
       <DependentUpon>PetrolPumpView.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\Checkout_.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -68,14 +77,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Class\GasolineType.cs" />
-    <Compile Include="Class\Order.cs" />
-    <Compile Include="Class\PetrolPump.cs" />
-    <Compile Include="Class\PetrolStation.cs" />
-    <Compile Include="Class\Receipt.cs" />
-    <Compile Include="Class\Stadistic.cs" />
-    <Compile Include="Class\Tap.cs" />
-    <Compile Include="Class\Till.cs" />
+    <Compile Include="Model\GasolineType.cs" />
+    <Compile Include="Model\Order.cs" />
+    <Compile Include="Model\PetrolPump.cs" />
+    <Compile Include="Model\PetrolStation.cs" />
+    <Compile Include="Model\Receipt.cs" />
+    <Compile Include="Model\Stadistic.cs" />
+    <Compile Include="Model\Tap.cs" />
+    <Compile Include="Model\Till.cs" />
     <Compile Include="ViewModel\MainWindow_ViewModel.cs" />
     <Compile Include="ViewModel\ModelBase.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />

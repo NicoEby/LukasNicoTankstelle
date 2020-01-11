@@ -1,0 +1,91 @@
+﻿<Window x:Class="LukasNicoTankstelle.View.Checkout_"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LukasNicoTankstelle.View"
+        mc:Ignorable="d"
+        Title="Checkout_" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5"></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition Width="5"></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition Width="5"></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition Width="5"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5"></RowDefinition>
+            <RowDefinition Height="50" ></RowDefinition>
+            <RowDefinition Height="5"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30">Checkout</Label>
+        
+        <!-- Title -->
+        <Grid Grid.Row="3" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Margin="0 3 0 3">Checkout</Label>
+            <ComboBox Grid.Row="0" Grid.Column="1" ></ComboBox>
+            <Label Grid.Row="1" Grid.Column="0" Margin="0 3 0 3">Pump</Label>
+            <ComboBox  Grid.Row="1" Grid.Column="1" Margin="0 3 0 3"></ComboBox>
+            <Label Grid.Row="2" Grid.Column="0" Margin="0 3 0 3">Bezahlt</Label>
+            <TextBox Grid.Row="2" Grid.Column="1" IsReadOnly="True" Margin="0 3 0 3"></TextBox>
+            <Label Grid.Row="3" Grid.Column="0" Margin="0 3 0 3">Kosten:</Label>
+            <TextBox Grid.Row="3" Grid.Column="1" IsReadOnly="True" Margin="0 3 0 3"></TextBox>
+
+            
+        </Grid>
+
+        <Grid Grid.Row="3" Grid.ColumnSpan="3" Grid.Column="3" >
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" Grid.Row="0">
+                <Button MinWidth="87">5 Rappen</Button>
+                <Button MinWidth="87">10 Rappen</Button>
+                <Button MinWidth="87">20 Rappen</Button>
+                <Button MinWidth="87">50 Rappen</Button>
+                <Button MinWidth="87">1 CHF</Button>
+                <Button MinWidth="87">2 CHF</Button>
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="1">
+                <Button MinWidth="87">5 CHF</Button>
+                <Button MinWidth="87">10 CHF</Button>
+                <Button MinWidth="87">20 CHF</Button>
+                <Button MinWidth="87">50 CHF</Button>
+                <Button MinWidth="87">100 CHF</Button>
+                <Button MinWidth="87">200 CHF</Button>
+
+            </StackPanel>
+            <Button Grid.Row="2" Grid.ColumnSpan="2" Margin="0 3 0 3" >Credit Card</Button>
+            <Button Grid.Row="3" Grid.ColumnSpan="2" Margin="0 3 0 3" >Cancel payment </Button>
+        </Grid>
+
+
+        <Button Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="5">Bezahlen</Button>
+        <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5">Quittung</Button>
+
+
+    </Grid>
+</Window>
