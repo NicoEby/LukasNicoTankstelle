@@ -1,4 +1,5 @@
 ﻿using KinoModel.ViewModel;
+using LukasNicoTankstelle.Class;
 using LukasNicoTankstelle.Commands;
 using System;
 using System.Collections.Generic;
@@ -9,10 +10,12 @@ using System.Windows.Input;
 
 namespace LukasNicoTankstelle.ViewModel
 {
-    public class PetrolPump_ViewModel: ModelBase
+    public class PetrolPump_ViewModel : ModelBase
     {
-        public PetrolPump_ViewModel(MainWindow_ViewModel newMainViewModel)
+        public PetrolPump_ViewModel(MainWindow_ViewModel newMainViewModel, PetrolPump petrolPump)
         {
+            mainWindowViewModel = newMainViewModel;
+            petrolPumpModel = petrolPump;
             //new TankCommand()
             //TankenCommand = new RelayCommand(TankCommand);
         }
@@ -35,5 +38,8 @@ namespace LukasNicoTankstelle.ViewModel
                 OnPropertyChanged(nameof(LiterGetankt));
             }
         }
+
+        public MainWindow_ViewModel mainWindowViewModel { get; set; }
+        public PetrolPump petrolPumpModel { get; set; }
     }
 }

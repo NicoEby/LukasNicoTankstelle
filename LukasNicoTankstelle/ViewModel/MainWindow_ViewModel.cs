@@ -19,9 +19,9 @@ namespace LukasNicoTankstelle.ViewModel
         private Boolean isPumpingGuess = false;
         private double maxLiterPump = 100;
 
-
         public PetrolStation PetrolStations { get; set; } = PetrolStation.getInstance();
-        public ObservableCollection<PetrolPump> CurrentPetrolPump { get; set; }
+        public ObservableCollection<PetrolPump> PetrolPumps { get; set; }
+        public Dictionary<string, PetrolPump_ViewModel> PetrolPumpVMs { get; set; }
 
 
         public ICommand EndPumpCommand
@@ -61,14 +61,13 @@ namespace LukasNicoTankstelle.ViewModel
             }
         }
 
-
-
         public MainWindow_ViewModel()
         {
-            CurrentPetrolPump = new ObservableCollection<PetrolPump>();
+            PetrolPumps = new ObservableCollection<PetrolPump>();
             foreach (PetrolPump b in PetrolStations.PetrolPumps)
             {
-                CurrentPetrolPump.Add(b);
+                PetrolPumps.Add(b);
+                PetrolPumpVMs.Add("PetrolPump" + b.Number, new PetrolPump_ViewModel(this, b));
             }
 
             EndPumpCommand = new RelayCommand(Do_endPump);

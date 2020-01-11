@@ -71,8 +71,8 @@ namespace LukasNicoTankstelle.Class
 
 
             PetrolPump petrolPump1 = new PetrolPump("1",taps);
-            PetrolPump petrolPump2 = new PetrolPump("1", taps);
-            PetrolPump petrolPump3 = new PetrolPump("1", taps);
+            PetrolPump petrolPump2 = new PetrolPump("2", taps);
+            PetrolPump petrolPump3 = new PetrolPump("3", taps);
             PetrolPumps.Add(petrolPump1);
             PetrolPumps.Add(petrolPump2);
             PetrolPumps.Add(petrolPump3);
