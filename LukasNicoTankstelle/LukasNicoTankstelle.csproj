@@ -56,6 +56,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands_Checkout\CancelPaymentCommand.cs" />
+    <Compile Include="Commands_Checkout\ChangeMoneyCommand.cs" />
     <Compile Include="Commands_Checkout\CreditCardCommand.cs" />
     <Compile Include="Commands_Checkout\PaymentCommand.cs" />
     <Compile Include="Commands\TankCommand.cs" />
