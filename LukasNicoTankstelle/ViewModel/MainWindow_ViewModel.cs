@@ -15,7 +15,6 @@ namespace LukasNicoTankstelle.ViewModel
     {
         private double liter = 1;
         private double price;
-        private ICommand tankenCommand;
         private ICommand endPumpCommand;
         private Boolean isPumpingGuess = false;
         private double maxLiterPump = 100;
@@ -24,12 +23,6 @@ namespace LukasNicoTankstelle.ViewModel
         public PetrolStation PetrolStations { get; set; } = PetrolStation.getInstance();
         public ObservableCollection<PetrolPump> CurrentPetrolPump { get; set; }
 
-
-        public ICommand TankenCommand
-        {
-            get { return tankenCommand; }
-            set { tankenCommand = value; }
-        }
 
         public ICommand EndPumpCommand
         {
@@ -78,7 +71,6 @@ namespace LukasNicoTankstelle.ViewModel
                 CurrentPetrolPump.Add(b);
             }
 
-            TankenCommand = new RelayCommand(Do_tanken);
             EndPumpCommand = new RelayCommand(Do_endPump);
 
         }
