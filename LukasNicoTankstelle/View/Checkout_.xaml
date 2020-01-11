@@ -42,13 +42,25 @@
                 <ColumnDefinition Width="2*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0" Margin="0 3 0 3">Checkout</Label>
-            <ComboBox Grid.Row="0" Grid.Column="1" ></ComboBox>
+            <ComboBox Grid.Row="0" Grid.Column="1"  ItemsSource="{Binding CheckOuts}" SelectedIndex="0" >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Number}"></TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
             <Label Grid.Row="1" Grid.Column="0" Margin="0 3 0 3">Pump</Label>
-            <ComboBox  Grid.Row="1" Grid.Column="1" Margin="0 3 0 3"></ComboBox>
+            <ComboBox  Grid.Row="1" Grid.Column="1" Margin="0 3 0 3" ItemsSource="{Binding PetrolPumps}" SelectedIndex="0">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Number}"></TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
             <Label Grid.Row="2" Grid.Column="0" Margin="0 3 0 3">Bezahlt</Label>
-            <TextBox Grid.Row="2" Grid.Column="1" IsReadOnly="True" Margin="0 3 0 3"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="1" IsReadOnly="True" Margin="0 3 0 3" Text="{Binding Paid, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"></TextBox>
             <Label Grid.Row="3" Grid.Column="0" Margin="0 3 0 3">Kosten:</Label>
-            <TextBox Grid.Row="3" Grid.Column="1" IsReadOnly="True" Margin="0 3 0 3"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="1" IsReadOnly="True" Margin="0 3 0 3"  Text="{Binding Cost}"></TextBox>
 
             
         </Grid>
@@ -61,25 +73,25 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <StackPanel Orientation="Horizontal" Grid.Row="0">
-                <Button MinWidth="87">5 Rappen</Button>
-                <Button MinWidth="87">10 Rappen</Button>
-                <Button MinWidth="87">20 Rappen</Button>
-                <Button MinWidth="87">50 Rappen</Button>
-                <Button MinWidth="87">1 CHF</Button>
-                <Button MinWidth="87">2 CHF</Button>
+                <Button Content="5 Rappen" MinWidth="87" Command="{Binding PaymentCommand}" CommandParameter="0.05" ></Button>
+                <Button MinWidth="87" Command="{Binding PaymentCommand}" CommandParameter="0.1">10 Rappen</Button>
+                <Button MinWidth="87" Command="{Binding PaymentCommand}" CommandParameter="0.2">20 Rappen</Button>
+                <Button MinWidth="87" Command="{Binding PaymentCommand}" CommandParameter="0.5">50 Rappen</Button>
+                <Button MinWidth="87" Command="{Binding PaymentCommand}" CommandParameter="1">1 CHF</Button>
+                <Button MinWidth="87" Command="{Binding PaymentCommand}" CommandParameter="1">2 CHF</Button>
 
             </StackPanel>
             <StackPanel Orientation="Horizontal" Grid.Row="1">
-                <Button MinWidth="87">5 CHF</Button>
-                <Button MinWidth="87">10 CHF</Button>
-                <Button MinWidth="87">20 CHF</Button>
-                <Button MinWidth="87">50 CHF</Button>
-                <Button MinWidth="87">100 CHF</Button>
-                <Button MinWidth="87">200 CHF</Button>
+                <Button MinWidth="87" Command="{Binding PaymentCommand}" CommandParameter="5">5 CHF</Button>
+                <Button MinWidth="87" Command="{Binding PaymentCommand}" CommandParameter="10">10 CHF</Button>
+                <Button MinWidth="87" Command="{Binding PaymentCommand}" CommandParameter="20">20 CHF</Button>
+                <Button MinWidth="87" Command="{Binding PaymentCommand}" CommandParameter="50">50 CHF</Button>
+                <Button MinWidth="87" Command="{Binding PaymentCommand}" CommandParameter="100">100 CHF</Button>
+                <Button MinWidth="87" Command="{Binding PaymentCommand}" CommandParameter="200">200 CHF</Button>
 
             </StackPanel>
-            <Button Grid.Row="2" Grid.ColumnSpan="2" Margin="0 3 0 3" >Credit Card</Button>
-            <Button Grid.Row="3" Grid.ColumnSpan="2" Margin="0 3 0 3" >Cancel payment </Button>
+            <Button Grid.Row="2" Grid.ColumnSpan="2" Margin="0 3 0 3" Command="{Binding CreditCardCommand}">Credit Card</Button>
+            <Button Grid.Row="3" Grid.ColumnSpan="2" Margin="0 3 0 3" > Cancel payment </Button>
         </Grid>
 
 

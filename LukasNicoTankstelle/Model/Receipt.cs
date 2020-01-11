@@ -11,6 +11,9 @@ namespace LukasNicoTankstelle.Class
         private Tap tap;
 
         private DateTime date;
+        private double amountOwed;
+        private double amountPaid;
+
 
         public Tap Tap
         {
@@ -25,13 +28,34 @@ namespace LukasNicoTankstelle.Class
             get { return date; }
             set
             {
-                date =  DateTime.Today;
+                date =  value;
+            }
+        }
+        public double AmountOwed
+        {
+            get { return amountOwed; }
+            set
+            {
+                amountOwed = value;
+            }
+        }
+        public double AmountPaid
+        {
+            get { return amountPaid; }
+            set
+            {
+                amountPaid = value;
             }
         }
 
-        public Receipt(Tap tap)
+
+        public Receipt(Tap tap, double amountOwed_, double amountPaid_)
         {
             Tap = tap;
+            Date = DateTime.Today;
+            AmountOwed = amountOwed_;
+            AmountPaid = amountPaid_;
+
         }
     }
 }

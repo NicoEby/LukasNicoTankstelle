@@ -55,6 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\CreditCardCommand.cs" />
+    <Compile Include="Commands\PaymentCommand.cs" />
     <Compile Include="Commands\TankCommand.cs" />
     <Compile Include="Model\Checkout.cs" />
     <Compile Include="ViewModel\Checkout_ViewModel.cs" />
