@@ -25,14 +25,14 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Label Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Margin="0 3 0 3">Zapfsäule</Label>
-        <ComboBox  Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Taps}" Margin="0 3 0 3" SelectedIndex="0">
+        <ComboBox Name="TapsComboBox"  Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Taps}" Margin="0 3 0 3" SelectedIndex="0">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding GasolineType}"/>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <Button Grid.Row="2" Grid.ColumnSpan="2" Margin="0 3 0 3" Command="{Binding PetrolPumpTankCommand}">Tanken</Button>
+        <Button Grid.Row="2" Grid.ColumnSpan="2" Margin="0 3 0 3" Command="{Binding PetrolPumpTankCommand}" CommandParameter="{Binding ElementName=TapsComboBox, Path=SelectedItem}">Tanken</Button>
         <Button Grid.Row="3" Grid.ColumnSpan="2" Margin="0 3 0 3">Fertig</Button>
 
         <Label Grid.Row="4" Grid.Column="0" Margin="0 3 0 3">Liter:</Label>

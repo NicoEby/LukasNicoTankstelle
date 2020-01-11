@@ -28,7 +28,7 @@
         <vm:PetrolPumpView Grid.Row="4" Grid.Column="3" DataContext="{Binding Path=PetrolPumpVMs[PetrolPump2]}"></vm:PetrolPumpView>
         <vm:PetrolPumpView Grid.Row="4" Grid.Column="5" DataContext="{Binding Path=PetrolPumpVMs[PetrolPump3]}"></vm:PetrolPumpView>
         <!-- Title -->
-        <Label Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" >Hallo</Label>
+        <Label Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" >Hallo Lukas</Label>
 
     </Grid>
 </Window>
