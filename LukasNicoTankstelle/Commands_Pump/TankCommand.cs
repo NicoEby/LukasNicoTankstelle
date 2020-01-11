@@ -10,7 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace LukasNicoTankstelle.Commands
+namespace LukasNicoTankstelle.Commands_Pump
 {
     public class TankCommand : RelayCommand
     {
@@ -52,7 +52,7 @@ namespace LukasNicoTankstelle.Commands
 
         public override bool CanExecute(object parameter)
         {
-            return true;
+            return !petrolPumpViewModel.PetrolPumpModel.WasUsed;
         }
 
         public event EventHandler CanExecuteChanged;

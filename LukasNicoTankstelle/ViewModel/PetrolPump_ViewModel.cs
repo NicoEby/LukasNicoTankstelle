@@ -1,6 +1,6 @@
 ﻿using KinoModel.ViewModel;
 using LukasNicoTankstelle.Class;
-using LukasNicoTankstelle.Commands;
+using LukasNicoTankstelle.Commands_Pump;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +18,7 @@ namespace LukasNicoTankstelle.ViewModel
             PetrolPumpModel = petrolPump;
             Taps = petrolPump.Taps;
             PetrolPumpTankCommand = new TankCommand(newMainViewModel, this);
+            FinishedPumping = new FinishedCommand(this);
             LiterGetankt = 0;
             IsPumping = false;
 
@@ -56,6 +57,17 @@ namespace LukasNicoTankstelle.ViewModel
             }
         }
 
+        private GasolineType chosenGasolineType;
+        public GasolineType ChosenGasolineType
+        {
+            get { return chosenGasolineType; }
+            set
+            {
+                chosenGasolineType = value;
+                OnPropertyChanged(nameof(ChosenGasolineType));
+            }
+        }
+
         public MainWindow_ViewModel MainWindowViewModel { get; set; }
         public PetrolPump PetrolPumpModel { get; set; }
         public List<Tap> Taps { get; set; }
@@ -64,6 +76,13 @@ namespace LukasNicoTankstelle.ViewModel
         {
             get { return petrolPumpTankCommand; }
             set {   petrolPumpTankCommand = value; }
+        }
+
+        private ICommand finishedPumping;
+        public ICommand FinishedPumping
+        {
+            get { return finishedPumping; }
+            set { finishedPumping = value; }
         }
     }
 }

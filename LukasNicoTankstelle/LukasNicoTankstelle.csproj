@@ -59,7 +59,8 @@
     <Compile Include="Commands_Checkout\ChangeMoneyCommand.cs" />
     <Compile Include="Commands_Checkout\CreditCardCommand.cs" />
     <Compile Include="Commands_Checkout\PaymentCommand.cs" />
-    <Compile Include="Commands\TankCommand.cs" />
+    <Compile Include="Commands_Pump\FinishedCommand.cs" />
+    <Compile Include="Commands_Pump\TankCommand.cs" />
     <Compile Include="Model\Checkout.cs" />
     <Compile Include="ViewModel\Checkout_ViewModel.cs" />
     <Compile Include="ViewModel\PetrolPump_ViewModel.cs" />
