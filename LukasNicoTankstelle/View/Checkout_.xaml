@@ -21,59 +21,71 @@
             <RowDefinition Height="5"></RowDefinition>
             <RowDefinition Height="50" ></RowDefinition>
             <RowDefinition Height="5"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <!--<vm:PetrolPumpView Grid.Row="4" Grid.Column="1"></vm:PetrolPumpView>
-        <vm:PetrolPumpView Grid.Row="4" Grid.Column="3"></vm:PetrolPumpView>
-        <vm:PetrolPumpView Grid.Row="4" Grid.Column="5"></vm:PetrolPumpView>-->
+
+        <Label Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30">Checkout</Label>
+        
         <!-- Title -->
-        <Grid Grid.Row="4" Grid.Column="1">
+        <Grid Grid.Row="3" Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Margin="0 3 0 3">Checkout</Label>
+            <ComboBox Grid.Row="0" Grid.Column="1" ></ComboBox>
+            <Label Grid.Row="1" Grid.Column="0" Margin="0 3 0 3">Pump</Label>
+            <ComboBox  Grid.Row="1" Grid.Column="1" Margin="0 3 0 3"></ComboBox>
+            <Label Grid.Row="2" Grid.Column="0" Margin="0 3 0 3">Bezahlt</Label>
+            <TextBox Grid.Row="2" Grid.Column="1" IsReadOnly="True" Margin="0 3 0 3"></TextBox>
+            <Label Grid.Row="3" Grid.Column="0" Margin="0 3 0 3">Kosten:</Label>
+            <TextBox Grid.Row="3" Grid.Column="1" IsReadOnly="True" Margin="0 3 0 3"></TextBox>
+
+            
+        </Grid>
+
+        <Grid Grid.Row="3" Grid.ColumnSpan="3" Grid.Column="3" >
+            <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Label Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Margin="0 3 0 3">Checkout 1</Label>
-            <ComboBox  Grid.Row="1" Grid.ColumnSpan="2"   Margin="0 3 0 3"></ComboBox>
-            <Label Grid.Row="2" Grid.Column="0" Margin="0 3 0 3">Bezahlt</Label>
-            <TextBox Grid.Row="2" Grid.Column="1" IsReadOnly="True" Margin="0 3 0 3"></TextBox>
-            <Label Grid.Row="3" Grid.Column="0" Margin="0 3 0 3">Kosten:</Label>
-            <TextBox Grid.Row="3" Grid.Column="1" IsReadOnly="True" Margin="0 3 0 3"></TextBox>
-            <StackPanel Grid.Row="4" Grid.ColumnSpan="2" Orientation="Vertical">
-                <StackPanel Orientation="Horizontal">
-                    <Button Width="30">0.05</Button>
-                    <Button Width="30">0.1</Button>
-                    <Button Width="30">0.2</Button>
-                    <Button Width="30">0.5</Button>
-                    <Button Width="30">1</Button>
-                    <Button Width="30">2</Button>
+            <StackPanel Orientation="Horizontal" Grid.Row="0">
+                <Button MinWidth="87">5 Rappen</Button>
+                <Button MinWidth="87">10 Rappen</Button>
+                <Button MinWidth="87">20 Rappen</Button>
+                <Button MinWidth="87">50 Rappen</Button>
+                <Button MinWidth="87">1 CHF</Button>
+                <Button MinWidth="87">2 CHF</Button>
 
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Button Width="30">5</Button>
-                    <Button Width="30">10</Button>
-                    <Button Width="30">20</Button>
-                    <Button Width="30">50</Button>
-                    <Button Width="30">100</Button>
-                    <Button Width="30">200</Button>
-
-                </StackPanel>
             </StackPanel>
-            <Button Grid.Row="5" Grid.ColumnSpan="2" Margin="0 3 0 3">Credit Card</Button>
-            <Button Grid.Row="6" Grid.ColumnSpan="2" Margin="0 3 0 3">Bezahlen</Button>
-            <Button Grid.Row="7" Grid.ColumnSpan="2" Margin="0 3 0 3">Quittung</Button>
+            <StackPanel Orientation="Horizontal" Grid.Row="1">
+                <Button MinWidth="87">5 CHF</Button>
+                <Button MinWidth="87">10 CHF</Button>
+                <Button MinWidth="87">20 CHF</Button>
+                <Button MinWidth="87">50 CHF</Button>
+                <Button MinWidth="87">100 CHF</Button>
+                <Button MinWidth="87">200 CHF</Button>
+
+            </StackPanel>
+            <Button Grid.Row="2" Grid.ColumnSpan="2" Margin="0 3 0 3" >Credit Card</Button>
+            <Button Grid.Row="3" Grid.ColumnSpan="2" Margin="0 3 0 3" >Cancel payment </Button>
         </Grid>
 
-        <Label Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" >Checkout</Label>
+
+        <Button Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="5">Bezahlen</Button>
+        <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5">Quittung</Button>
+
 
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LukasNicoTankstelle.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,8 @@ namespace LukasNicoTankstelle.View
         public Checkout_()
         {
             InitializeComponent();
+            Checkout_ViewModel checkout_ViewModel = new Checkout_ViewModel();
+            DataContext = checkout_ViewModel;
         }
     }
 }
