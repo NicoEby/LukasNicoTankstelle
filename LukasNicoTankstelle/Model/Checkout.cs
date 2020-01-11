@@ -26,6 +26,7 @@ namespace LukasNicoTankstelle.Model
         public int NumberOf200CHFCoins { get; set; }
         public Receipt Receipt { get; set; }
 
+        public Dictionary<double,int> Cash = new Dictionary<double,int>();
         public Checkout(int number,int _5Rap, int _10Rap, int _20Rap,int _50Rap, int _1CHF, int _2CHF, int _5CHF, int _10CHF, int _20CHF, int _50CHF,int _100CHF, int _200CHF)
         {
             Number = number;
@@ -41,6 +42,20 @@ namespace LukasNicoTankstelle.Model
             NumberOf50CHFCoins = _50CHF;
             NumberOf100CHFCoins = _100CHF;
             NumberOf200CHFCoins = _200CHF;
+
+            Cash.Add(0.05,_5Rap);
+            Cash.Add(0.1, _10Rap);
+            Cash.Add(0.2, _20Rap);
+            Cash.Add(0.5, _50Rap);
+            Cash.Add(1, _1CHF);
+            Cash.Add(2, _2CHF);
+            Cash.Add(5, _5CHF); 
+            Cash.Add(10, _10CHF);
+            Cash.Add(20, _20CHF);
+            Cash.Add(50, _50CHF);
+            Cash.Add(100, _100CHF);
+            Cash.Add(200, _5Rap);
+
             //Receipt = receipt;
 
         }

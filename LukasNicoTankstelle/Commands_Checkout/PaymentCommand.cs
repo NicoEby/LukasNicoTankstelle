@@ -22,6 +22,7 @@ namespace LukasNicoTankstelle.Commands
         public override void Execute(object parameter)
         {
             checkout_ViewModel.Paid= checkout_ViewModel.Paid + Convert.ToDouble(parameter);
+            checkout_ViewModel.CheckOuts[1].Cash[Convert.ToDouble(parameter)] +=1;
         }
 
         void worker_DoWork(object sender, DoWorkEventArgs e)

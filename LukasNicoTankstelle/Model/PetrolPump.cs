@@ -66,6 +66,7 @@ namespace LukasNicoTankstelle.Class
         {
             Number = number;
             Taps = taps;
+            WasUsed = false;
         }
 
     }

@@ -23,7 +23,7 @@ namespace LukasNicoTankstelle.Commands_Checkout
         {
             if (checkout_ViewModel.Cost <= checkout_ViewModel.Paid)
             {
-                double amountToPay = checkout_ViewModel.Cost - checkout_ViewModel.Paid;
+                double changeMoney = checkout_ViewModel.Paid - checkout_ViewModel.Cost;
                 string message = $"Zahlung erfolgreich beendet";
                 string title = "Gratuliere";
                 MessageBox.Show(message, title);
