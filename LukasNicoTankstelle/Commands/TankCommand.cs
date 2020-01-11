@@ -1,4 +1,5 @@
-﻿using LukasNicoTankstelle.ViewModel;
+﻿using KinoModel.ViewModel;
+using LukasNicoTankstelle.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +11,7 @@ using System.Windows.Input;
 
 namespace LukasNicoTankstelle.Commands
 {
-    public class TankCommand : ICommand
+    public class TankCommand : RelayCommand
     {
         private MainWindow_ViewModel mainViewModel;
         private PetrolPump_ViewModel petrolPumpViewModel;
@@ -21,7 +22,7 @@ namespace LukasNicoTankstelle.Commands
             petrolPumpViewModel = newPetrolPumpViewModel;
         }
 
-        public void Execute(object parameter)
+        public override void Execute(object parameter)
         {
             BackgroundWorker worker = new BackgroundWorker();
             worker.WorkerReportsProgress = true;
@@ -40,7 +41,7 @@ namespace LukasNicoTankstelle.Commands
             Thread.Sleep(500);
         }
 
-        public bool CanExecute(object parameter)
+        public override bool CanExecute(object parameter)
         {
             return true;
         }

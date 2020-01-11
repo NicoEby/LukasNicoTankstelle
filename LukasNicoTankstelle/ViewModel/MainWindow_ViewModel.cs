@@ -63,6 +63,7 @@ namespace LukasNicoTankstelle.ViewModel
 
         public MainWindow_ViewModel()
         {
+            PetrolPumpVMs = new Dictionary<string, PetrolPump_ViewModel>();
             PetrolPumps = new ObservableCollection<PetrolPump>();
             foreach (PetrolPump b in PetrolStations.PetrolPumps)
             {
@@ -70,7 +71,7 @@ namespace LukasNicoTankstelle.ViewModel
                 PetrolPumpVMs.Add("PetrolPump" + b.Number, new PetrolPump_ViewModel(this, b));
             }
 
-            EndPumpCommand = new RelayCommand(Do_endPump);
+            //EndPumpCommand = new RelayCommand(Do_endPump);
 
         }
 

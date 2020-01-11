@@ -78,7 +78,7 @@ namespace LukasNicoTankstelle.Class
             PetrolPumps.Add(petrolPump3);
 
 
-
+            Checkouts = new List<Checkout>();
 
             Checkout checkout1 =  new Checkout(1,30, 30, 30, 30, 30, 30, 30, 30, 30, 20, 15, 15);
             Checkout checkout2 = new Checkout(2,30, 30, 30, 30, 30, 30, 30, 30, 30, 20, 15, 15);

@@ -14,21 +14,14 @@ namespace LukasNicoTankstelle.ViewModel
     {
         public PetrolPump_ViewModel(MainWindow_ViewModel newMainViewModel, PetrolPump petrolPump)
         {
-            mainWindowViewModel = newMainViewModel;
-            petrolPumpModel = petrolPump;
-            //new TankCommand()
-            //TankenCommand = new RelayCommand(TankCommand);
+            MainWindowViewModel = newMainViewModel;
+            PetrolPumpModel = petrolPump;
+            Taps = petrolPump.Taps;
+            PetrolPumpTankCommand = new TankCommand(newMainViewModel, this);
+
         }
 
         private int literGetankt;
-        private ICommand tankenCommand;
-
-        public ICommand TankenCommand
-        {
-            get { return tankenCommand; }
-            set { tankenCommand = value; }
-        }
-
         public int LiterGetankt
         {
             get { return literGetankt; }
@@ -39,7 +32,14 @@ namespace LukasNicoTankstelle.ViewModel
             }
         }
 
-        public MainWindow_ViewModel mainWindowViewModel { get; set; }
-        public PetrolPump petrolPumpModel { get; set; }
+        public MainWindow_ViewModel MainWindowViewModel { get; set; }
+        public PetrolPump PetrolPumpModel { get; set; }
+        public List<Tap> Taps { get; set; }
+        private ICommand petrolPumpTankCommand;
+        public ICommand PetrolPumpTankCommand
+        {
+            get { return petrolPumpTankCommand; }
+            set {   petrolPumpTankCommand = value; }
+        }
     }
 }
