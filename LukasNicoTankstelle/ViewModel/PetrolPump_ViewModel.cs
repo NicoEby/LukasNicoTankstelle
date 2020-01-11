@@ -18,16 +18,29 @@ namespace LukasNicoTankstelle.ViewModel
             PetrolPumpModel = petrolPump;
             Taps = petrolPump.Taps;
             PetrolPumpTankCommand = new TankCommand(newMainViewModel, this);
+            LiterGetankt = 0;
+            IsPumping = false;
 
         }
 
-        private int literGetankt;
-        public int LiterGetankt
+        private bool isPumping;
+        public bool IsPumping
+        {
+            get { return isPumping; }
+            set
+            {
+                isPumping = value;
+                OnPropertyChanged(nameof(IsPumping));
+            }
+        }
+
+        private double literGetankt;
+        public double LiterGetankt
         {
             get { return literGetankt; }
             set
             {
-                literGetankt = value;
+                literGetankt = Math.Round(value, 1);
                 OnPropertyChanged(nameof(LiterGetankt));
             }
         }
