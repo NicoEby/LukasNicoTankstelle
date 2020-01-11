@@ -22,6 +22,7 @@ namespace LukasNicoTankstelle.ViewModel
         public PetrolStation PetrolStations { get; set; } = PetrolStation.getInstance();
         public ObservableCollection<PetrolPump> PetrolPumps { get; set; }
         public Dictionary<string, PetrolPump_ViewModel> PetrolPumpVMs { get; set; }
+        public Checkout_ViewModel CheckoutVM { get; set; }
 
 
         public ICommand EndPumpCommand
@@ -71,7 +72,7 @@ namespace LukasNicoTankstelle.ViewModel
                 PetrolPumpVMs.Add("PetrolPump" + b.Number, new PetrolPump_ViewModel(this, b));
             }
 
-            //EndPumpCommand = new RelayCommand(Do_endPump);
+            CheckoutVM = new Checkout_ViewModel();
 
         }
 

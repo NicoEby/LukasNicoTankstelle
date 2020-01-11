@@ -45,6 +45,17 @@ namespace LukasNicoTankstelle.ViewModel
             }
         }
 
+        private double cost;
+        public double Cost
+        {
+            get { return cost; }
+            set
+            {
+                cost = value;
+                OnPropertyChanged(nameof(Cost));
+            }
+        }
+
         public MainWindow_ViewModel MainWindowViewModel { get; set; }
         public PetrolPump PetrolPumpModel { get; set; }
         public List<Tap> Taps { get; set; }

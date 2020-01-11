@@ -37,7 +37,7 @@
 
         <Label Grid.Row="4" Grid.Column="0" Margin="0 3 0 3">Liter:</Label>
         <TextBox Grid.Row="4" Grid.Column="1" IsReadOnly="True"  Text="{Binding Path=LiterGetankt, Mode=TwoWay}" Margin="0 3 0 3"></TextBox>
-        <Label Grid.Row="5" Grid.Column="0" Margin="0 3 0 3"> Kosten:</Label>
-        <TextBox Grid.Row="5" Grid.Column="1" IsReadOnly="True"  Text="{Binding Kosten}" Margin="0 3 0 3"></TextBox>
+        <Label Grid.Row="5" Grid.Column="0" Margin="0 3 0 3">Kosten:</Label>
+        <TextBox Grid.Row="5" Grid.Column="1" IsReadOnly="True"  Text="{Binding Path=Cost, Mode=TwoWay}" Margin="0 3 0 3"></TextBox>
     </Grid>
 </UserControl>

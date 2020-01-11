@@ -39,6 +39,7 @@ namespace LukasNicoTankstelle.Commands
             while (petrolPumpViewModel.IsPumping)
             {
                 petrolPumpViewModel.LiterGetankt += 00.1;
+                petrolPumpViewModel.Cost = petrolPumpViewModel.LiterGetankt * usedTap.PricePerLiter;
                 Thread.Sleep(50);
             }
 
