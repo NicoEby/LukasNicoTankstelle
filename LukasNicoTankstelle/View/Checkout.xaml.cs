@@ -18,13 +18,11 @@ namespace LukasNicoTankstelle.View
     /// <summary>
     /// Interaction logic for Checkout_.xaml
     /// </summary>
-    public partial class Checkout_ : Window
+    public partial class Checkout : UserControl
     {
-        public Checkout_()
+        public Checkout()
         {
             InitializeComponent();
-            Checkout_ViewModel checkout_ViewModel = new Checkout_ViewModel();
-            DataContext = checkout_ViewModel;
         }
     }
 }

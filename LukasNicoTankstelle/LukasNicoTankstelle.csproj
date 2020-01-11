@@ -63,13 +63,13 @@
     <Compile Include="Model\Checkout.cs" />
     <Compile Include="ViewModel\Checkout_ViewModel.cs" />
     <Compile Include="ViewModel\PetrolPump_ViewModel.cs" />
-    <Compile Include="View\Checkout_.xaml.cs">
-      <DependentUpon>Checkout_.xaml</DependentUpon>
+    <Compile Include="View\Checkout.xaml.cs">
+      <DependentUpon>Checkout.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PetrolPumpView.xaml.cs">
       <DependentUpon>PetrolPumpView.xaml</DependentUpon>
     </Compile>
-    <Page Include="View\Checkout_.xaml">
+    <Page Include="View\Checkout.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

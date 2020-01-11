@@ -63,9 +63,9 @@ namespace LukasNicoTankstelle.Class
         private void Init()
         {
             List<Tap> taps = new List<Tap>{
-            new Tap(false, 50, GasolineType.Petrol),
-            new Tap(false, 50, GasolineType.Diesel),
-            new Tap(false, 50, GasolineType.Unleaded95),
+            new Tap(false, 50, GasolineType.Petrol, 1.54),
+            new Tap(false, 50, GasolineType.Diesel, 1.5),
+            new Tap(false, 50, GasolineType.Unleaded95, 1.39),
         };
             PetrolPumps = new List<PetrolPump>();
 

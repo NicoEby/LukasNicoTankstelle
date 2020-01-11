@@ -8,27 +8,35 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="550" Width="600">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="5"></ColumnDefinition>
-            <ColumnDefinition ></ColumnDefinition>
-            <ColumnDefinition Width="5"></ColumnDefinition>
-            <ColumnDefinition ></ColumnDefinition>
-            <ColumnDefinition Width="5"></ColumnDefinition>
-            <ColumnDefinition ></ColumnDefinition>
-            <ColumnDefinition Width="5"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
+        <TabControl>
+            <TabItem Header="Tankstelle">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5"></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition Width="5"></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition Width="5"></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition Width="5"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="5"></RowDefinition>
-            <RowDefinition Height="50" ></RowDefinition>
-            <RowDefinition Height="5"></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-        <vm:PetrolPumpView Grid.Row="4" Grid.Column="1" DataContext="{Binding Path=PetrolPumpVMs[PetrolPump1]}"></vm:PetrolPumpView>
-        <vm:PetrolPumpView Grid.Row="4" Grid.Column="3" DataContext="{Binding Path=PetrolPumpVMs[PetrolPump2]}"></vm:PetrolPumpView>
-        <vm:PetrolPumpView Grid.Row="4" Grid.Column="5" DataContext="{Binding Path=PetrolPumpVMs[PetrolPump3]}"></vm:PetrolPumpView>
-        <!-- Title -->
-        <Label Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" >Hallo Lukas</Label>
-
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5"></RowDefinition>
+                        <RowDefinition Height="50" ></RowDefinition>
+                        <RowDefinition Height="5"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <vm:PetrolPumpView Grid.Row="4" Grid.Column="1" DataContext="{Binding Path=PetrolPumpVMs[PetrolPump1]}"></vm:PetrolPumpView>
+                    <vm:PetrolPumpView Grid.Row="4" Grid.Column="3" DataContext="{Binding Path=PetrolPumpVMs[PetrolPump2]}"></vm:PetrolPumpView>
+                    <vm:PetrolPumpView Grid.Row="4" Grid.Column="5" DataContext="{Binding Path=PetrolPumpVMs[PetrolPump3]}"></vm:PetrolPumpView>
+                    <!-- Title -->
+                    <Label Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" >Hallo Lukas</Label>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Kasse">
+                <vm:Checkout DataContext="{Binding Path=CheckoutVM}"/>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

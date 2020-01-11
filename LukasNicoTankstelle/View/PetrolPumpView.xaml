@@ -32,12 +32,12 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <Button Grid.Row="2" Grid.ColumnSpan="2" Margin="0 3 0 3" Command="{Binding PetrolPumpTankCommand}" CommandParameter="{Binding ElementName=TapsComboBox, Path=SelectedItem}">Tanken</Button>
+        <ToggleButton IsChecked="{Binding IsPumping}" Grid.Row="2" Grid.ColumnSpan="2" Margin="0 3 0 3" Command="{Binding PetrolPumpTankCommand}" CommandParameter="{Binding ElementName=TapsComboBox, Path=SelectedItem}">Tanken</ToggleButton>
         <Button Grid.Row="3" Grid.ColumnSpan="2" Margin="0 3 0 3">Fertig</Button>
 
         <Label Grid.Row="4" Grid.Column="0" Margin="0 3 0 3">Liter:</Label>
-        <TextBox Grid.Row="4" Grid.Column="1" IsReadOnly="True"  Text="{Binding CurrentPetrolPump[1].Liter}" Margin="0 3 0 3"></TextBox>
-        <Label Grid.Row="5" Grid.Column="0" Margin="0 3 0 3"> Kosten:</Label>
-        <TextBox Grid.Row="5" Grid.Column="1" IsReadOnly="True"  Text="{Binding Kosten}" Margin="0 3 0 3"></TextBox>
+        <TextBox Grid.Row="4" Grid.Column="1" IsReadOnly="True"  Text="{Binding Path=LiterGetankt, Mode=TwoWay}" Margin="0 3 0 3"></TextBox>
+        <Label Grid.Row="5" Grid.Column="0" Margin="0 3 0 3">Kosten:</Label>
+        <TextBox Grid.Row="5" Grid.Column="1" IsReadOnly="True"  Text="{Binding Path=Cost, Mode=TwoWay}" Margin="0 3 0 3"></TextBox>
     </Grid>
 </UserControl>

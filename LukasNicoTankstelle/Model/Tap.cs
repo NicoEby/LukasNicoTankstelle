@@ -9,8 +9,9 @@ namespace LukasNicoTankstelle.Class
     public class Tap
     {
         private Boolean inUse;
-        private float literPerTank;
+        private double literPerTank;
         private GasolineType gasolineType;
+        private double pricePerLiter;
 
         public Boolean InUse
         {
@@ -20,7 +21,7 @@ namespace LukasNicoTankstelle.Class
                 inUse = value;
             }
         }
-        public float LiterPerTank
+        public double LiterPerTank
         {
             get { return literPerTank; }
             set
@@ -37,11 +38,18 @@ namespace LukasNicoTankstelle.Class
             }
         }
 
-        public Tap(Boolean inUse, float literPerTank,GasolineType gasolineType)
+        public double PricePerLiter
+        {
+            get { return pricePerLiter; }
+            set { pricePerLiter = value; }
+        }
+
+        public Tap(Boolean inUse, double literPerTank,GasolineType gasolineType, double newPrice)
         {
             InUse = inUse;
             LiterPerTank = literPerTank;
             GasolineType = gasolineType;
+            PricePerLiter = newPrice;
         }
     }
 }
