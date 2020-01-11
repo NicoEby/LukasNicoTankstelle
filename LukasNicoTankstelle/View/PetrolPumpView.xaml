@@ -33,7 +33,7 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
         <ToggleButton IsChecked="{Binding IsPumping}" Grid.Row="2" Grid.ColumnSpan="2" Margin="0 3 0 3" Command="{Binding PetrolPumpTankCommand}" CommandParameter="{Binding ElementName=TapsComboBox, Path=SelectedItem}">Tanken</ToggleButton>
-        <Button Grid.Row="3" Grid.ColumnSpan="2" Margin="0 3 0 3">Fertig</Button>
+        <Button Grid.Row="3" Grid.ColumnSpan="2" Margin="0 3 0 3" Command="{Binding FinishedPumping}" CommandParameter="{Binding ElementName=TapsComboBox, Path=SelectedItem}">Fertig</Button>
 
         <Label Grid.Row="4" Grid.Column="0" Margin="0 3 0 3">Liter:</Label>
         <TextBox Grid.Row="4" Grid.Column="1" IsReadOnly="True"  Text="{Binding Path=LiterGetankt, Mode=TwoWay}" Margin="0 3 0 3"></TextBox>

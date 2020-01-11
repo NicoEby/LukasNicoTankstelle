@@ -57,16 +57,20 @@ namespace LukasNicoTankstelle.Class
             }
         }
 
-
-
-
-
-
         public PetrolPump(string number, List<Tap> taps)
         {
             Number = number;
             Taps = taps;
             WasUsed = false;
+        }
+
+        public void FinishedPumping(PetrolPump usedPump, GasolineType usedGasolineType, double litersPumped, double amountOwed)
+        {
+            usedPump.WasUsed = true;
+            usedPump.AmountOwned = amountOwed;
+            Tap usedTap = Taps.Where(x => x.GasolineType == usedGasolineType).FirstOrDefault();
+            usedTap.LiterPerTank -= litersPumped;
+
         }
 
     }
