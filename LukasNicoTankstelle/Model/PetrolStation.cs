@@ -110,7 +110,7 @@ namespace LukasNicoTankstelle.Class
                     usedPetrolPumps.Add(pp);
                 }
             }
-            return petrolPumps;
+            return usedPetrolPumps;
         }
     }
 }

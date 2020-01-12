@@ -60,5 +60,12 @@ namespace LukasNicoTankstelle.Model
 
         }
 
+        public void FinishedBuying(PetrolPump usedPump)
+        {
+            usedPump.WasUsed = false;
+            usedPump.AmountOwned = 0;
+
+        }
+
     }
 }

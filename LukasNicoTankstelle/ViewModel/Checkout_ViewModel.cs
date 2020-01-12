@@ -15,28 +15,36 @@ namespace LukasNicoTankstelle.ViewModel
 {
     public class Checkout_ViewModel: ModelBase
     {
+        private List<PetrolPump> petrolPumps;
         public PetrolStation PetrolStations { get; set; } = PetrolStation.getInstance();
+        public List<PetrolPump> PetrolPumps
+        {
+            get { return PetrolStations.GetAllUsedPumps(); }
+
+        }
+        //public List<PetrolPump> PetrolPumps { get; set; }
         public ObservableCollection<Checkout> CheckOuts { get; set; }
-        public ObservableCollection<PetrolPump> PetrolPumps { get; set; }
+
 
         private double cost =100;
         private double paid = 0;
-        //private int numberOf5RapCoins;
-        //private int numberOf10RapCoins ;
-        //private int numberOf20RapCoins ;
-        //private int numberOf50RapCoins ;
-        //private int numberOf1CHFCoins ;
-        //private int numberOf2CHFCoins ;
-        //private int numberOf5CHFCoins ;
-        //private int numberOf10CHFCoins ;
-        //private int numberOf20CHFCoins ;
-        //private int numberOf50CHFCoins ;
-        //private int numberOf100CHFCoins ;
-        //private int numberOf200CHFCoins ;
+        private int numberOf5RapCoins = 0;
+        private int numberOf10RapCoins = 0;
+        private int numberOf20RapCoins = 0;
+        private int numberOf50RapCoins = 0;
+        private int numberOf1CHFCoins = 0;
+        private int numberOf2CHFCoins = 0;
+        private int numberOf5CHFCoins = 0;
+        private int numberOf10CHFCoins = 0;
+        private int numberOf20CHFCoins = 0;
+        private int numberOf50CHFCoins = 0;
+        private int numberOf100CHFCoins = 0;
+        private int numberOf200CHFCoins = 0;
         private ICommand paymentCommand;
         private ICommand creditCardCommand;
         private ICommand cancelPaymentCommand;
         private ICommand changeMoneyCommand;
+        private ICommand refreshCommand;
 
 
 
@@ -60,6 +68,13 @@ namespace LukasNicoTankstelle.ViewModel
             get { return changeMoneyCommand; }
             set { changeMoneyCommand = value; }
         }
+        public ICommand RefreshCommand
+        {
+            get { return refreshCommand; }
+            set { refreshCommand = value; }
+        }
+
+        
 
         public double Cost
         {
@@ -81,41 +96,131 @@ namespace LukasNicoTankstelle.ViewModel
             }
         }
 
-        //public double Paid
-        //{
-        //    get { return paid; }
-        //    set
-        //    {
-        //        paid = value;
-        //        OnPropertyChanged(nameof(Paid));
+        public int NumberOf5RapCoins
+        {
+            get { return numberOf5RapCoins; }
+            set
+            {
+                numberOf5RapCoins = value;
+                OnPropertyChanged(nameof(numberOf5RapCoins));
 
-        //    }
-        //}
+            }
+        }
+        public int NumberOf10RapCoins
+        {
+            get { return numberOf10RapCoins; }
+            set
+            {
+                numberOf10RapCoins = value;
+                OnPropertyChanged(nameof(numberOf10RapCoins));
 
-        //public int NumberOf5RapCoins { get{return numberOf5RapCoins }
-        //    set { } }
+            }
+        }
+        public int NumberOf20RapCoins
+        {
+            get { return numberOf20RapCoins; }
+            set
+            {
+                numberOf20RapCoins = value;
+                OnPropertyChanged(nameof(numberOf20RapCoins));
 
-        //public int NumberOf10RapCoins { get{ } set{ } }
+            }
+        }
+        public int NumberOf50RapCoins
+        {
+            get { return numberOf50RapCoins; }
+            set
+            {
+                numberOf50RapCoins = value;
+                OnPropertyChanged(nameof(numberOf50RapCoins));
 
-        //public int NumberOf20RapCoins { get{ } set{ } }
-        //public int NumberOf50RapCoins { get{ } set{ } }
-        //public int NumberOf1CHFCoins { get{ } set{ } }
-        //public int NumberOf2CHFCoins { get{ } set{ } }
-        //public int NumberOf5CHFCoins { get{ } set{ } }
-        //public int NumberOf10CHFCoins { get{ } set{ } }
-        //public int NumberOf20CHFCoins { get{ } set{ } }
-        //public int NumberOf50CHFCoins { get{ } set{ } }
-        //public int NumberOf100CHFCoins { get{ } set{ } }
-        //public int NumberOf200CHFCoins { get{ } set{ } }
+            }
+        }
+        public int NumberOf1CHFCoins
+        {
+            get { return numberOf1CHFCoins; }
+            set
+            {
+                numberOf1CHFCoins = value;
+                OnPropertyChanged(nameof(numberOf1CHFCoins));
 
+            }
+        }
+        public int NumberOf2CHFCoins
+        {
+            get { return numberOf2CHFCoins; }
+            set
+            {
+                numberOf2CHFCoins = value;
+                OnPropertyChanged(nameof(numberOf2CHFCoins));
 
+            }
+        }
+        public int NumberOf5CHFCoins
+        {
+            get { return numberOf5CHFCoins; }
+            set
+            {
+                numberOf5CHFCoins = value;
+                OnPropertyChanged(nameof(numberOf5CHFCoins));
 
+            }
+        }
+        public int NumberOf10CHFCoins
+        {
+            get { return numberOf10CHFCoins; }
+            set
+            {
+                numberOf10CHFCoins = value;
+                OnPropertyChanged(nameof(numberOf10CHFCoins));
 
+            }
+        }
+        public int NumberOf20CHFCoins
+        {
+            get { return numberOf20CHFCoins; }
+            set
+            {
+                numberOf20CHFCoins = value;
+                OnPropertyChanged(nameof(numberOf20CHFCoins));
 
+            }
+        }
+        public int NumberOf50CHFCoins
+        {
+            get { return numberOf50CHFCoins; }
+            set
+            {
+                numberOf50CHFCoins = value;
+                OnPropertyChanged(nameof(numberOf50CHFCoins));
 
+            }
+        }
+        public int NumberOf100CHFCoins
+        {
+            get { return numberOf100CHFCoins; }
+            set
+            {
+                numberOf100CHFCoins = value;
+                OnPropertyChanged(nameof(numberOf100CHFCoins));
+
+            }
+        }
+        public int NumberOf200CHFCoins
+        {
+            get { return numberOf200CHFCoins; }
+            set
+            {
+                numberOf200CHFCoins = value;
+                OnPropertyChanged(nameof(numberOf200CHFCoins));
+
+            }
+        }
 
         public Checkout_ViewModel()
         {
+            //PetrolPumps =  PetrolStations.GetAllUsedPumps();
+
             CheckOuts = new ObservableCollection<Checkout>();
             foreach (Checkout b in PetrolStations.Checkouts)
             {
@@ -127,22 +232,10 @@ namespace LukasNicoTankstelle.ViewModel
             CreditCardCommand = new CreditCardCommand(this);
             CancelPaymentCommand = new CancelPaymentCommand(this);
             ChangeMoneyCommand = new ChangeMoneyCommand(this);
+            RefreshCommand = new RefreshCommand(this); 
 
 
         }
-
-        private void Do_Payment(object coin)
-        {
-            Paid = Paid + Convert.ToDouble(coin);
-        }
-
-
-        private void Do_PayWithCard(object obj)
-        {
-
-        }
-
-
 
 
     }

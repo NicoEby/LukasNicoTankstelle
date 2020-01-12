@@ -42,6 +42,7 @@
                 <ColumnDefinition Width="2*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0" Margin="0 3 0 3">Checkout</Label>
+            <Button Grid.Row="0" Grid.Column="1" Margin="621,-60,-527,70" Command="{Binding RefreshCommand}">Refresh</Button>
             <ComboBox Grid.Row="0" Grid.Column="1"  ItemsSource="{Binding CheckOuts}" SelectedIndex="0" >
                 <ComboBox.ItemTemplate>
                     <DataTemplate>

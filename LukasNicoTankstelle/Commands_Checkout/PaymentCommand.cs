@@ -23,6 +23,50 @@ namespace LukasNicoTankstelle.Commands
         {
             checkout_ViewModel.Paid= checkout_ViewModel.Paid + Convert.ToDouble(parameter);
             checkout_ViewModel.CheckOuts[1].Cash[Convert.ToDouble(parameter)] +=1;
+
+            switch (Convert.ToString( parameter))
+            {
+                case "0.05":
+                    checkout_ViewModel.NumberOf5RapCoins += 1;
+                    break;
+                case "0.1":
+                    checkout_ViewModel.NumberOf10RapCoins += 1;
+                    break;
+                case "0.2":
+                    checkout_ViewModel.NumberOf20RapCoins += 1;
+                    break;
+                case "0.5":
+                    checkout_ViewModel.NumberOf50RapCoins += 1;
+                    break;
+                case "1":
+                    checkout_ViewModel.NumberOf1CHFCoins += 1;
+                    break;
+                case "2":
+                    checkout_ViewModel.NumberOf2CHFCoins += 1;
+                    break;
+                case "5":
+                    checkout_ViewModel.NumberOf5CHFCoins += 1;
+                    break;
+                case "10":
+                    checkout_ViewModel.NumberOf10CHFCoins += 1;
+                    break;
+                case "20":
+                    checkout_ViewModel.NumberOf20CHFCoins += 1;
+                    break;
+                case "50":
+                    checkout_ViewModel.NumberOf50CHFCoins += 1;
+                    break;
+                case "100":
+                    checkout_ViewModel.NumberOf100CHFCoins += 1;
+                    break;
+                case "200":
+                    checkout_ViewModel.NumberOf200CHFCoins += 1;
+                    break;
+
+
+                default:
+                    break;
+            }
         }
 
         void worker_DoWork(object sender, DoWorkEventArgs e)

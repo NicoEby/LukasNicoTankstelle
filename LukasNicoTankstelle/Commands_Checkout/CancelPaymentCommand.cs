@@ -21,6 +21,22 @@ namespace LukasNicoTankstelle.Commands_Checkout
         public override void Execute(object parameter)
         {
             checkout_ViewModel.Paid = 0;
+
+
+
+            checkout_ViewModel.NumberOf5RapCoins = 0;
+            checkout_ViewModel.NumberOf10RapCoins = 0;
+            checkout_ViewModel.NumberOf20RapCoins = 0;
+            checkout_ViewModel.NumberOf50RapCoins = 0;
+            checkout_ViewModel.NumberOf1CHFCoins = 0;
+            checkout_ViewModel.NumberOf2CHFCoins = 0;
+            checkout_ViewModel.NumberOf5CHFCoins = 0;
+            checkout_ViewModel.NumberOf10CHFCoins = 0;
+            checkout_ViewModel.NumberOf20CHFCoins = 0;
+            checkout_ViewModel.NumberOf50CHFCoins = 0;
+            checkout_ViewModel.NumberOf100CHFCoins = 0;
+            checkout_ViewModel.NumberOf200CHFCoins = 0;
+
         }
 
         void worker_DoWork(object sender, DoWorkEventArgs e)
