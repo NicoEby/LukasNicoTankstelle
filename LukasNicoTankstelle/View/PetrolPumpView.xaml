@@ -3,13 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:LukasNicoTankstelle.View"
+             xmlns:local="clr-namespace:LukasNicoTankstelle"
+             xmlns:helpers="clr-namespace:LukasNicoTankstelle.Helpers"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <Style TargetType="RowDefinition">
             <Setter Property="Height" Value="40"/>
         </Style>
+        <helpers:IsThereAValueConverter x:Key="IsThereAValueConverter" />
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -25,7 +27,7 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Label Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Margin="0 3 0 3">Zapfsäule</Label>
-        <ComboBox Name="TapsComboBox"  Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Taps}" Margin="0 3 0 3" SelectedIndex="0">
+        <ComboBox Name="TapsComboBox"  Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Taps}" Margin="0 3 0 3" SelectedIndex="0" IsEnabled="{Binding Path=LiterGetankt, Converter={StaticResource IsThereAValueConverter}}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding GasolineType}"/>

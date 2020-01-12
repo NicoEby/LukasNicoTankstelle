@@ -1,6 +1,7 @@
 ﻿using KinoModel.ViewModel;
 using LukasNicoTankstelle.Class;
 using LukasNicoTankstelle.ViewModel;
+using LukasNicoTankstelle.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,7 @@ namespace LukasNicoTankstelle.Commands_Pump
 
         public override bool CanExecute(object parameter)
         {
-            return petrolPumpViewModel.LiterGetankt > 0;
+            return petrolPumpViewModel.LiterGetankt > 0 && !petrolPumpViewModel.IsPumping;
         }
 
         public event EventHandler CanExecuteChanged;

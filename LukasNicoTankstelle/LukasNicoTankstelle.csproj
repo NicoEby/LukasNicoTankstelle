@@ -63,6 +63,7 @@
     <Compile Include="Commands_Checkout\RefreshCommand.cs" />
     <Compile Include="Commands_Pump\FinishedCommand.cs" />
     <Compile Include="Commands_Pump\TankCommand.cs" />
+    <Compile Include="Helpers\IsThereAValueConverter.cs" />
     <Compile Include="Model\Checkout.cs" />
     <Compile Include="ViewModel\Checkout_ViewModel.cs" />
     <Compile Include="ViewModel\PetrolPump_ViewModel.cs" />
@@ -94,7 +95,7 @@
     <Compile Include="Model\Till.cs" />
     <Compile Include="ViewModel\MainWindow_ViewModel.cs" />
     <Compile Include="ViewModel\ModelBase.cs" />
-    <Compile Include="ViewModel\RelayCommand.cs" />
+    <Compile Include="Helpers\RelayCommand.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
