@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace KinoModel.ViewModel
+namespace LukasNicoTankstelle.Helpers
 {
     public abstract class RelayCommand : ICommand
     {

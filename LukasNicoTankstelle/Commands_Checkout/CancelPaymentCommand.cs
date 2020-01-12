@@ -1,5 +1,6 @@
 ﻿using KinoModel.ViewModel;
 using LukasNicoTankstelle.ViewModel;
+using LukasNicoTankstelle.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
