@@ -54,6 +54,7 @@ namespace LukasNicoTankstelle.Commands_Checkout
                 {
                     string title = "Gratuliere";
                     MessageBox.Show(message, title);
+                    checkout_ViewModel.PetrolPumpModel.OpenPump(checkout_ViewModel.PetrolPumpModel);
 
                 }
                 else

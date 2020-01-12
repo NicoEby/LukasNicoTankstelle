@@ -25,6 +25,7 @@ namespace LukasNicoTankstelle.Commands
             string title = "Kreditkarte ";
             MessageBox.Show(message, title);
             checkout_ViewModel.Paid = checkout_ViewModel.Cost;
+            checkout_ViewModel.PetrolPumpModel.OpenPump(checkout_ViewModel.PetrolPumpModel);
         }
 
         void worker_DoWork(object sender, DoWorkEventArgs e)

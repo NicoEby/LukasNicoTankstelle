@@ -74,7 +74,8 @@ namespace LukasNicoTankstelle.ViewModel
             set { refreshCommand = value; }
         }
 
-        
+        public PetrolPump PetrolPumpModel { get; set; }
+
 
         public double Cost
         {

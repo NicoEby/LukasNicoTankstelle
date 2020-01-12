@@ -73,5 +73,12 @@ namespace LukasNicoTankstelle.Class
 
         }
 
+        public void OpenPump(PetrolPump usedPump)
+        {
+            usedPump.WasUsed = false;
+            usedPump.AmountOwned = 0;          
+
+        }
+
     }
 }

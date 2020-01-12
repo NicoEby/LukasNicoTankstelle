@@ -8,6 +8,12 @@ namespace LukasNicoTankstelle.Class
 {
     public class Stadistic
     {
-        //Dictionary<DateTime, float > 
+        public Dictionary<DateTime, float> DailyPetrolPrice { get; set; }
+        public Dictionary<DateTime, float> AmountPetrolSold { get; set; }
+        public Dictionary<DateTime, float> SortOfPetrol { get; set; }
+
+
+
+
     }
 }
