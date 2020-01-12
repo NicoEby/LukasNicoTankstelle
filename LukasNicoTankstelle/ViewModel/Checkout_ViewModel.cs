@@ -45,6 +45,7 @@ namespace LukasNicoTankstelle.ViewModel
         private ICommand cancelPaymentCommand;
         private ICommand changeMoneyCommand;
         private ICommand refreshCommand;
+        private ICommand receiptCommand;
 
 
 
@@ -72,6 +73,11 @@ namespace LukasNicoTankstelle.ViewModel
         {
             get { return refreshCommand; }
             set { refreshCommand = value; }
+        }
+        public ICommand ReceiptCommand
+        {
+            get { return receiptCommand; }
+            set { receiptCommand = value; }
         }
 
         public PetrolPump PetrolPumpModel { get; set; }
@@ -233,7 +239,8 @@ namespace LukasNicoTankstelle.ViewModel
             CreditCardCommand = new CreditCardCommand(this);
             CancelPaymentCommand = new CancelPaymentCommand(this);
             ChangeMoneyCommand = new ChangeMoneyCommand(this);
-            RefreshCommand = new RefreshCommand(this); 
+            RefreshCommand = new RefreshCommand(this);
+            ReceiptCommand = new ReceiptCommand(this);
 
 
         }

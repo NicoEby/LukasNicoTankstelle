@@ -1,6 +1,6 @@
-﻿using KinoModel.ViewModel;
-using LukasNicoTankstelle.ViewModel;
+﻿using LukasNicoTankstelle.Class;
 using LukasNicoTankstelle.Helpers;
+using LukasNicoTankstelle.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,25 +9,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace LukasNicoTankstelle.Commands
+namespace LukasNicoTankstelle.Commands_Checkout
 {
-    public class CreditCardCommand: RelayCommand
+    public class ReceiptCommand:RelayCommand
     {
         private Checkout_ViewModel checkout_ViewModel;
 
-        public CreditCardCommand(Checkout_ViewModel newcheckout_ViewModel)
+        public ReceiptCommand(Checkout_ViewModel newcheckout_ViewModel)
         {
             checkout_ViewModel = newcheckout_ViewModel;
         }
 
         public override void Execute(object parameter)
         {
-            string message = "Zahlung gemacht";
-            string title = "Kreditkarte ";
+            Receipt receipt=checkout_ViewModel.PetrolPumpModel.ReceiptOfPump;
+            string message = $"Bezogener Treibstoffbetrag: {receipt.AmountLiter} \n Bezogener Literanzahl: {receipt.AmountLiter} \n Bezogener Treibstoffart {receipt.TypeOfGasoline} \n Datum {receipt.Date} ";
+            string title = "Quittung ";
             MessageBox.Show(message, title);
-            checkout_ViewModel.Paid = checkout_ViewModel.Cost;
-            checkout_ViewModel.PetrolPumpModel = checkout_ViewModel.PetrolPumps[0];
-            checkout_ViewModel.PetrolPumpModel.OpenPump(checkout_ViewModel.PetrolPumpModel);
         }
 
         void worker_DoWork(object sender, DoWorkEventArgs e)

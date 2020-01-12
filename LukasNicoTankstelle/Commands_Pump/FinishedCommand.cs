@@ -20,8 +20,10 @@ namespace LukasNicoTankstelle.Commands_Pump
         }
 
         public override void Execute(object parameter)
-        {
+        {            
             Tap usedTap = parameter as Tap;
+            Receipt receipt = new Receipt(petrolPumpViewModel.LiterGetankt,petrolPumpViewModel.Cost,usedTap.GasolineType);
+            petrolPumpViewModel.PetrolPumpModel.ReceiptOfPump = receipt;            
             petrolPumpViewModel.PetrolPumpModel.FinishedPumping(petrolPumpViewModel.PetrolPumpModel, usedTap.GasolineType, petrolPumpViewModel.LiterGetankt, petrolPumpViewModel.Cost);
         }
 

@@ -60,6 +60,7 @@
     <Compile Include="Commands_Checkout\CreditCardCommand.cs" />
     <Compile Include="Commands_Checkout\FinishedCommand.cs" />
     <Compile Include="Commands_Checkout\PaymentCommand.cs" />
+    <Compile Include="Commands_Checkout\ReceiptCommand.cs" />
     <Compile Include="Commands_Checkout\RefreshCommand.cs" />
     <Compile Include="Commands_Pump\FinishedCommand.cs" />
     <Compile Include="Commands_Pump\TankCommand.cs" />

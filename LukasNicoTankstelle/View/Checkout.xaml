@@ -99,7 +99,7 @@
 
         <!--CommandParameter="{Binding ElementName=PumpsComboBox, Path=SelectedItem}"-->
         <Button Content="Bezahlen" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="5" Command="{Binding ChangeMoneyCommand}"></Button>
-        <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5">Quittung</Button>
+        <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5" Command="{Binding ReceiptCommand}">Quittung</Button>
 
 
     </Grid>

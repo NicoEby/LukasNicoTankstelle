@@ -8,21 +8,12 @@ namespace LukasNicoTankstelle.Class
 {
     public class Receipt
     {
-        private Tap tap;
 
         private DateTime date;
-        private double amountOwed;
+        private double amountLiter;
         private double amountPaid;
+        private GasolineType typeOfGasoline;
 
-
-        public Tap Tap
-        {
-            get { return tap; }
-            set
-            {
-                tap = value;
-            }
-        }
         public DateTime Date
         {
             get { return date; }
@@ -31,12 +22,12 @@ namespace LukasNicoTankstelle.Class
                 date =  value;
             }
         }
-        public double AmountOwed
+        public double AmountLiter
         {
-            get { return amountOwed; }
+            get { return amountLiter; }
             set
             {
-                amountOwed = value;
+                amountLiter = value;
             }
         }
         public double AmountPaid
@@ -47,14 +38,23 @@ namespace LukasNicoTankstelle.Class
                 amountPaid = value;
             }
         }
-
-
-        public Receipt(Tap tap, double amountOwed_, double amountPaid_)
+        public GasolineType TypeOfGasoline
         {
-            Tap = tap;
+            get { return typeOfGasoline; }
+            set
+            {
+                typeOfGasoline = value;
+            }
+        }
+
+
+
+        public Receipt( double amountLiter_, double amountPaid_,GasolineType gasolineType_)
+        {
             Date = DateTime.Today;
-            AmountOwed = amountOwed_;
+            AmountLiter = amountLiter_;
             AmountPaid = amountPaid_;
+            TypeOfGasoline = gasolineType_;
 
         }
     }

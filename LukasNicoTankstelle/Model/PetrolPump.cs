@@ -15,6 +15,8 @@ namespace LukasNicoTankstelle.Class
         private double liter = 1;
         private double amountOwed;
 
+        public Receipt ReceiptOfPump { get; set; }
+
         public string Number
         {
             get { return number; }
@@ -56,6 +58,7 @@ namespace LukasNicoTankstelle.Class
                 amountOwed = value;
             }
         }
+        
 
         public PetrolPump(string number, List<Tap> taps)
         {
