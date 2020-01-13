@@ -23,6 +23,7 @@ namespace LukasNicoTankstelle.ViewModel
         public ObservableCollection<PetrolPump> PetrolPumps { get; set; }
         public Dictionary<string, PetrolPump_ViewModel> PetrolPumpVMs { get; set; }
         public Checkout_ViewModel CheckoutVM { get; set; }
+        public Stadistic_ViewModel StadisticVM { get; set; }
 
 
         public ICommand EndPumpCommand
@@ -73,6 +74,7 @@ namespace LukasNicoTankstelle.ViewModel
             }
 
             CheckoutVM = new Checkout_ViewModel();
+            StadisticVM = new Stadistic_ViewModel();
 
         }
 
