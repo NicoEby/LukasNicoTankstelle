@@ -10,12 +10,12 @@ namespace LukasNicoTankstelle.Class
     public class Receipt
     {
 
-        private DateTime date;
+        private string date;
         private double amountLiter;
         private double amountPaid;
         private GasolineType typeOfGasoline;
 
-        public DateTime Date
+        public string Date
         {
             get { return date; }
             set
@@ -52,7 +52,7 @@ namespace LukasNicoTankstelle.Class
 
         public Receipt( double amountLiter_, double amountPaid_,GasolineType gasolineType_)
         {
-            Date = DateTime.Today;
+            Date = DateTime.Now.ToString("dd.MM.yyy HH:mm");
             AmountLiter = amountLiter_;
             AmountPaid = amountPaid_;
             TypeOfGasoline = gasolineType_;
@@ -65,7 +65,7 @@ namespace LukasNicoTankstelle.Class
 
             using (StreamWriter sw = new StreamWriter(filename,true))
             {
-                sw.WriteLine($"{Date},{AmountLiter},{AmountPaid},{TypeOfGasoline}");
+                sw.WriteLine($"{Date};{AmountLiter};{AmountPaid};{TypeOfGasoline}");
 
             }
 

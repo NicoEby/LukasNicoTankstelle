@@ -25,26 +25,26 @@
 
         <Label Grid.Column="1" Grid.ColumnSpan="2" >Statistik</Label>
         <Label Grid.Column="1" Grid.Row="1">Umsatz im letzen Jahr</Label>
-        <TextBox Grid.Column="2" Grid.Row="1" Text="{Binding Path=LastYear}"></TextBox>
+        <TextBlock Grid.Column="2" Grid.Row="1" Text="{Binding Path=LastYear}"></TextBlock>
         <Label Grid.Column="1" Grid.Row="2">Umsatz im letzten Monat</Label>
-        <TextBox Grid.Column="2" Grid.Row="2" Text="{Binding Path=LastMonth}"></TextBox>
+        <TextBlock Grid.Column="2" Grid.Row="2" Text="{Binding Path=LastMonth}"></TextBlock>
         <Label Grid.Column="1" Grid.Row="3">Umsatz in der letzten Woche</Label>
-        <TextBox Grid.Column="2" Grid.Row="3" Text="{Binding Path=LastWeek}"></TextBox>
+        <TextBlock Grid.Column="2" Grid.Row="3" Text="{Binding Path=LastWeek}"></TextBlock>
         <Label Grid.Column="1" Grid.Row="4">Umsatz am Tag (Frankenbetrag)</Label>
-        <TextBox Grid.Column="2" Grid.Row="4" Text="{Binding Path=LastDay}"></TextBox>
+        <TextBlock Grid.Column="2" Grid.Row="4" Text="{Binding Path=LastDay}"></TextBlock>
         <Label Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2">Umsatz am Tag (Literanzahl pro Treibstoffsorte)</Label>
         <StackPanel Grid.Column="1" Grid.Row="6">
             <StackPanel Orientation="Horizontal">
                 <Label>Petrol</Label>
-                <TextBox Text="{Binding Path=LiterPetrol}"></TextBox>
+                <TextBlock Text="{Binding Path=LiterPetrol}"></TextBlock>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label>Diesel</Label>
-                <TextBox Text="{Binding Path=LiterDiesel}"></TextBox>
+                <TextBlock Text="{Binding Path=LiterDiesel}"></TextBlock>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label>Unleaded95</Label>
-                <TextBox Text="{Binding Path=LiterUnleaded95}"></TextBox>
+                <TextBlock Text="{Binding Path=LiterUnleaded95}"></TextBlock>
             </StackPanel>
         </StackPanel>
 
