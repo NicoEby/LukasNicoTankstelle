@@ -1,4 +1,5 @@
-﻿using LukasNicoTankstelle.Class;
+﻿using KinoModel.ViewModel;
+using LukasNicoTankstelle.Class;
 using LukasNicoTankstelle.Model;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Text;
 namespace LukasNicoTankstelle.ViewModel
 {
     
-    public class Statistic_ViewModel 
+    public class Statistic_ViewModel : ModelBase
     {
         public Statistic Statistic_ { get; set; }
 
@@ -27,6 +28,7 @@ namespace LukasNicoTankstelle.ViewModel
             set
             {
                 lastYear = value;
+                OnPropertyChanged(nameof(LastYear));
             }
         }
         public double LastMonth
@@ -35,6 +37,7 @@ namespace LukasNicoTankstelle.ViewModel
             set
             {
                 lastMonth = value;
+                OnPropertyChanged(nameof(LastMonth));
             }
         }
         public double LastWeek
@@ -43,6 +46,7 @@ namespace LukasNicoTankstelle.ViewModel
             set
             {
                 lastWeek = value;
+                OnPropertyChanged(nameof(LastWeek));
             }
         }
         public double LastDay
@@ -51,6 +55,7 @@ namespace LukasNicoTankstelle.ViewModel
             set
             {
                 lastDay = value;
+                OnPropertyChanged(nameof(LastDay));
             }
         }
 
@@ -60,6 +65,7 @@ namespace LukasNicoTankstelle.ViewModel
             set
             {
                 literPetrol = value;
+                OnPropertyChanged(nameof(LiterPetrol));
             }
         }
         public double LiterDiesel
@@ -68,6 +74,7 @@ namespace LukasNicoTankstelle.ViewModel
             set
             {
                 literDiesel = value;
+                OnPropertyChanged(nameof(LiterDiesel));
             }
         }
         public double LiterUnleaded95
@@ -76,8 +83,11 @@ namespace LukasNicoTankstelle.ViewModel
             set
             {
                 literUnleaded95 = value;
+                OnPropertyChanged(nameof(LiterUnleaded95));
             }
         }
+
+        static List<Statistic_ViewModel> allStatisticsVMs = new List<Statistic_ViewModel>();
 
         public Statistic_ViewModel()
         {
@@ -91,7 +101,24 @@ namespace LukasNicoTankstelle.ViewModel
             LiterPetrol = literperGasolineType.Item1;
             LiterDiesel = literperGasolineType.Item2;
             LiterUnleaded95 = literperGasolineType.Item3;
+            allStatisticsVMs.Add(this);
 
+        }
+
+        public static void StatisticWasAdded(object sender, EventArgs e)
+        {
+            foreach(Statistic_ViewModel statisticVM in allStatisticsVMs)
+            {
+                statisticVM.Statistic_ = new Statistic();
+                Tuple<double, double, double> literperGasolineType = statisticVM.Statistic_.TotalLiterProGasolineTypeLastDay();
+                statisticVM.LastYear = statisticVM.Statistic_.TotalWinLastYear();
+                statisticVM.LastMonth = statisticVM.Statistic_.TotalWinLastMonth();
+                statisticVM.LastWeek = statisticVM.Statistic_.TotalWinLastWeek();
+                statisticVM.LastDay = statisticVM.Statistic_.TotalWinLastDay();
+                statisticVM.LiterPetrol = literperGasolineType.Item1;
+                statisticVM.LiterDiesel = literperGasolineType.Item2;
+                statisticVM.LiterUnleaded95 = literperGasolineType.Item3;
+            }
         }
     }
 }

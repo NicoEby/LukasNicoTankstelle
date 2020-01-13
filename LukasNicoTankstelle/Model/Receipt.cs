@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LukasNicoTankstelle.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -56,6 +57,7 @@ namespace LukasNicoTankstelle.Class
             AmountLiter = amountLiter_;
             AmountPaid = amountPaid_;
             TypeOfGasoline = gasolineType_;
+            StatisticWasAdded += Statistic_ViewModel.StatisticWasAdded;
 
         }
 
@@ -68,9 +70,20 @@ namespace LukasNicoTankstelle.Class
                 sw.WriteLine($"{Date};{AmountLiter};{AmountPaid};{TypeOfGasoline}");
 
             }
+            OnStatisticWasAdded(EventArgs.Empty);
 
 
+        }
 
+        public event EventHandler StatisticWasAdded;
+
+        protected virtual void OnStatisticWasAdded(EventArgs e)
+        {
+            EventHandler handler = StatisticWasAdded;
+            if (handler != null)
+            {
+                handler(this, e);
+            }
         }
     }
 }
