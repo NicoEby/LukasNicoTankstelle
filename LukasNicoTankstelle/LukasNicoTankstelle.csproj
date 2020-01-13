@@ -96,7 +96,6 @@
     <Compile Include="Model\Receipt.cs" />
     <Compile Include="Model\Statistic.cs" />
     <Compile Include="Model\Tap.cs" />
-    <Compile Include="Model\Till.cs" />
     <Compile Include="ViewModel\MainWindow_ViewModel.cs" />
     <Compile Include="ViewModel\ModelBase.cs" />
     <Compile Include="Helpers\RelayCommand.cs" />
