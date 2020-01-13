@@ -23,6 +23,7 @@ namespace LukasNicoTankstelle.Commands_Checkout
 
         public override void Execute(object parameter)
         {
+            //Diese Methode gibt das Wechselgeld zurück beruhend auf dem Preis und dem gegebenen Betrag
             Dictionary<double, int> changeMoney =
             checkout_ViewModel.ChosenCheckout.processingPaymentCash(
                 checkout_ViewModel.Cost ?? 0,
@@ -53,8 +54,11 @@ namespace LukasNicoTankstelle.Commands_Checkout
 
             MessageBox.Show(message, title);
 
+
             checkout_ViewModel.PetrolPumpModel = checkout_ViewModel.ChosenPump;
+            //Pump gets reopened
             checkout_ViewModel.PetrolPumpModel.OpenPump(checkout_ViewModel.PetrolPumpModel);
+            //As You pay the receipt gets made
             Receipt receipt = checkout_ViewModel.PetrolPumpModel.ReceiptOfPump;
             receipt.SaveData();
 
@@ -69,6 +73,7 @@ namespace LukasNicoTankstelle.Commands_Checkout
 
         public override bool CanExecute(object parameter)
         {
+            //You can only pay when there is Something to pay and the client has given enough cash
             return checkout_ViewModel.Cost != 0 
                 && checkout_ViewModel.Paid >= checkout_ViewModel.Cost
                 && checkout_ViewModel.ChosenCheckout != null

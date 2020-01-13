@@ -7,6 +7,9 @@ using System.Windows.Data;
 
 namespace LukasNicoTankstelle.Helpers
 {
+    /// <summary>
+    /// For use in View, equal to bool! (which is invalod in xaml)
+    /// </summary>
     public class IsThereAValueConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)

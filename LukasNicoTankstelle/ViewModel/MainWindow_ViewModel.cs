@@ -77,21 +77,5 @@ namespace LukasNicoTankstelle.ViewModel
             StatisticVM = new Statistic_ViewModel();
 
         }
-
-
-        private void Do_tanken(object obj)
-        {
-            while (!IsPumpingGuess && Liter <= maxLiterPump)
-            {
-                Liter = Liter + 0.1;
-                //Thread.Sleep(00);
-            }
-        }
-
-        private void Do_endPump(object obj)
-        {
-            IsPumpingGuess = true;
-        }
-
     }
 }

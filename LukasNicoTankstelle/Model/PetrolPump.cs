@@ -75,6 +75,7 @@ namespace LukasNicoTankstelle.Class
         public event EventHandler PumpWasUsed;
         public event EventHandler PumpIsPayed;
 
+        //Dieser Event teilt mit das sich das Model verändert hat, dies wird gebraucht um das ViewModel und den View mit dem Model zu abzugleichen
         protected virtual void OnPumpWasUsed(EventArgs e)
         {
             EventHandler handler = PumpWasUsed;
@@ -93,6 +94,13 @@ namespace LukasNicoTankstelle.Class
             }
         }
 
+        /// <summary>
+        /// After pumping the pump is blocked and several parameters are recorded
+        /// </summary>
+        /// <param name="usedPump"></param>
+        /// <param name="usedGasolineType"></param>
+        /// <param name="litersPumped"></param>
+        /// <param name="amountOwed"></param>
         public void FinishedPumping(PetrolPump usedPump, GasolineType usedGasolineType, double litersPumped, double amountOwed)
         {  
             usedPump.WasUsed = true;
@@ -102,6 +110,10 @@ namespace LukasNicoTankstelle.Class
             OnPumpWasUsed(EventArgs.Empty);
         }
 
+        /// <summary>
+        /// After payment was received the open is reset and reopened
+        /// </summary>
+        /// <param name="usedPump"></param>
         public void OpenPump(PetrolPump usedPump)
         {
             usedPump.WasUsed = false;

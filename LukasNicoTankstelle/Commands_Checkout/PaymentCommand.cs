@@ -26,6 +26,7 @@ namespace LukasNicoTankstelle.Commands
             checkout_ViewModel.Paid= checkout_ViewModel.Paid + m;
             checkout_ViewModel.CheckOuts[1].Cash[m] +=1;
 
+            //Dieser Switchcase speichert welches Münz der Kunde gegeben hat um die Münze und Noten in der Kasse abspeichern zu können
             switch (m)
             {
                 case 0.05:

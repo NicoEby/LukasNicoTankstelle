@@ -11,6 +11,7 @@ namespace LukasNicoTankstelle.Model
     {
         public int Number { get; set; }
 
+        //Dieser Dictionary-Struktur wird gebraucht damit Münzwert und Münzmenge zusammen gespeichert sind und man von Wert auf Menge zugreifen kann
         public Dictionary<double,int> Cash = new Dictionary<double,int>();
         public Checkout(int number,int _5Rap, int _10Rap, int _20Rap,int _50Rap, int _1CHF, int _2CHF, int _5CHF, int _10CHF, int _20CHF, int _50CHF,int _100CHF, int _200CHF)
         {

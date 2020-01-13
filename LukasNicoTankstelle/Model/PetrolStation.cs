@@ -99,6 +99,10 @@ namespace LukasNicoTankstelle.Class
             return _instance;
         }
 
+        /// <summary>
+        /// Return a List of usedPumps that are blocked and need to be paid
+        /// </summary>
+        /// <returns></returns>
         public List<PetrolPump> GetAllUsedPumps()
         {
             List<PetrolPump> usedPetrolPumps = new List<PetrolPump>();
