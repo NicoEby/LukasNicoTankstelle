@@ -9,24 +9,31 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace LukasNicoTankstelle.ViewModel
 {
-    public class Checkout_ViewModel: ModelBase
+    public class Checkout_ViewModel : ModelBase
     {
         private List<PetrolPump> petrolPumps;
         public PetrolStation PetrolStations { get; set; } = PetrolStation.getInstance();
+        static List<Checkout_ViewModel> allCheckoutVMs = new List<Checkout_ViewModel>();
         public List<PetrolPump> PetrolPumps
         {
-            get { return PetrolStations.GetAllUsedPumps(); }
+            get { return petrolPumps; }
+            set
+            {
+                petrolPumps = value;
+                OnPropertyChanged(nameof(PetrolPumps));
+
+            }
 
         }
         //public List<PetrolPump> PetrolPumps { get; set; }
         public ObservableCollection<Checkout> CheckOuts { get; set; }
 
-
-        private double cost =100;
+        private double cost = 100;
         private double paid = 0;
         private int numberOf5RapCoins = 0;
         private int numberOf10RapCoins = 0;
@@ -224,9 +231,17 @@ namespace LukasNicoTankstelle.ViewModel
             }
         }
 
+        public static void PumpWasUsedVM (object sender, EventArgs e)
+        {
+            foreach(Checkout_ViewModel checkoutVM in allCheckoutVMs)
+            {
+                checkoutVM.PetrolPumps = checkoutVM.PetrolStations.GetAllUsedPumps();
+            }
+        }
+
         public Checkout_ViewModel()
         {
-            //PetrolPumps =  PetrolStations.GetAllUsedPumps();
+            allCheckoutVMs.Add(this);
 
             CheckOuts = new ObservableCollection<Checkout>();
             foreach (Checkout b in PetrolStations.Checkouts)
@@ -244,7 +259,5 @@ namespace LukasNicoTankstelle.ViewModel
 
 
         }
-
-
     }
 }

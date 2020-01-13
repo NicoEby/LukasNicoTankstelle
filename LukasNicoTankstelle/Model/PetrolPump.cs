@@ -1,8 +1,10 @@
-﻿using System;
+﻿using LukasNicoTankstelle.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static LukasNicoTankstelle.ViewModel.Checkout_ViewModel;
 
 namespace LukasNicoTankstelle.Class
 {
@@ -65,15 +67,27 @@ namespace LukasNicoTankstelle.Class
             Number = number;
             Taps = taps;
             WasUsed = false;
+            PumpWasUsed += Checkout_ViewModel.PumpWasUsedVM;
+        }
+
+        public event EventHandler PumpWasUsed;
+
+        protected virtual void OnPumpWasUsed(EventArgs e)
+        {
+            EventHandler handler = PumpWasUsed;
+            if (handler != null)
+            {
+                handler(this, e);
+            }
         }
 
         public void FinishedPumping(PetrolPump usedPump, GasolineType usedGasolineType, double litersPumped, double amountOwed)
-        {
+        {  
             usedPump.WasUsed = true;
             usedPump.AmountOwned = amountOwed;
             Tap usedTap = Taps.Where(x => x.GasolineType == usedGasolineType).FirstOrDefault();
             usedTap.LiterPerTank -= litersPumped;
-
+            OnPumpWasUsed(EventArgs.Empty);
         }
 
         public void OpenPump(PetrolPump usedPump)
