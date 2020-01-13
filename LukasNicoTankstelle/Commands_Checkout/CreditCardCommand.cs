@@ -24,11 +24,11 @@ namespace LukasNicoTankstelle.Commands
         public override void Execute(object parameter)
         {
             string title = "Kreditkarte ";
-            string message = "Du hast gerade " + checkout_ViewModel.Paid + " Fr. mit Kreditkarte bezahlt";
+            string message = "Du hast gerade " + checkout_ViewModel.Cost + " Fr. mit Kreditkarte bezahlt";
             MessageBox.Show(message, title);
 
             checkout_ViewModel.Paid = checkout_ViewModel.Cost ?? 0;
-            checkout_ViewModel.PetrolPumpModel = checkout_ViewModel.PetrolPumps[0];
+            checkout_ViewModel.PetrolPumpModel = checkout_ViewModel.ChosenPump;
             checkout_ViewModel.PetrolPumpModel.OpenPump(checkout_ViewModel.PetrolPumpModel);
             Receipt receipt = checkout_ViewModel.PetrolPumpModel.ReceiptOfPump;
             receipt.SaveData();

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using LukasNicoTankstelle.Class;
 
 namespace LukasNicoTankstelle.Commands_Checkout
 {
@@ -43,8 +44,22 @@ namespace LukasNicoTankstelle.Commands_Checkout
                 checkout_ViewModel.Paid
                 );
 
+            string title = "Bargeldzahlung:";
+            string message = "Dein Wechselgeld ist \n";
+            foreach(KeyValuePair<double, int> coin in changeMoney)
+            {
+                message += coin.Value.ToString() + " mal " + coin.Key.ToString() + " Fr.\n";
+            }
 
-            
+            MessageBox.Show(message, title);
+
+            checkout_ViewModel.PetrolPumpModel = checkout_ViewModel.ChosenPump;
+            checkout_ViewModel.PetrolPumpModel.OpenPump(checkout_ViewModel.PetrolPumpModel);
+            Receipt receipt = checkout_ViewModel.PetrolPumpModel.ReceiptOfPump;
+            receipt.SaveData();
+
+
+
         }
 
         void worker_DoWork(object sender, DoWorkEventArgs e)
