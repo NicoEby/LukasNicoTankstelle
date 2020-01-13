@@ -22,10 +22,11 @@ namespace LukasNicoTankstelle.Commands
 
         public override void Execute(object parameter)
         {
-            checkout_ViewModel.Paid= checkout_ViewModel.Paid + Convert.ToDouble(parameter);
-            checkout_ViewModel.CheckOuts[1].Cash[Convert.ToDouble(parameter)] +=1;
+            Double m = Convert.ToDouble(parameter)/100;
+            checkout_ViewModel.Paid= checkout_ViewModel.Paid + m;
+            checkout_ViewModel.CheckOuts[1].Cash[m] +=1;
 
-            switch (Convert.ToString( parameter))
+            switch (m.ToString())
             {
                 case "0.05":
                     checkout_ViewModel.NumberOf5RapCoins += 1;
