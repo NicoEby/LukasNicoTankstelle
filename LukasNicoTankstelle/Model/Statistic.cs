@@ -87,22 +87,33 @@ namespace LukasNicoTankstelle.Class
             }
             return winLastDay;
         }
-        //public double TotalLiterProGasolineTypeLastDay()
-        //{
-        //    double totalLiterPetrol = 0;
-        //    double totalLiterPetrol = 0;
-        //    double totalLiterPetrol = 0;
-        //    foreach (Tuple<DateTime, double, double, string> s in Stadistics)
-        //    {
-        //        if (s.Item1 > DateTime.Today.AddDays(-1))
-        //        {
-        //            if (s.Item4 == "Petrol")
-        //            {
+        public Tuple<double, double, double> TotalLiterProGasolineTypeLastDay()
+        {
+            double totalLiterPetrol = 0;
+            double totalLiterDiesel = 0;
+            double totalLiterUnleaded95 = 0;
+            foreach (Tuple<DateTime, double, double, string> s in Statistics)
+            {
+                if (s.Item1 > DateTime.Today.AddDays(-1))
+                {
+                    if (s.Item4 == "Petrol")
+                    {
+                        totalLiterPetrol += s.Item3;
+                    }
+                    if (s.Item4 == "Diesel")
+                    {
+                        totalLiterDiesel += s.Item3;
+                    }
+                    if (s.Item4 == "Unleaded95")
+                    {
+                        totalLiterUnleaded95 += s.Item3;
+                    }
+                }
 
-        //            }
-        //        }
-        //    }
-        //    return winLastDay;
-        //}
+            }
+            Tuple<double, double, double> literperGasolineType = new Tuple<double, double, double>(totalLiterPetrol, totalLiterDiesel, totalLiterUnleaded95);
+
+            return literperGasolineType;
+        }
     }
 }

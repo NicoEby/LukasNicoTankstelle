@@ -26,17 +26,13 @@ namespace LukasNicoTankstelle.Commands_Checkout
             string message = $"Bezogener Treibstoffbetrag: {receipt.AmountPaid}CHF \n Bezogener Literanzahl: {receipt.AmountLiter}L \n Bezogener Treibstoffart {receipt.TypeOfGasoline} \n Datum {receipt.Date} ";
             string title = "Quittung ";
             MessageBox.Show(message, title);
-            
-        }
-
-        void worker_DoWork(object sender, DoWorkEventArgs e)
-        {
-
+            checkout_ViewModel.PetrolPumpModel.ReceiptOfPump = null;
         }
 
         public override bool CanExecute(object parameter)
         {
-            return true;
+            return checkout_ViewModel.PetrolPumpModel != null
+                && checkout_ViewModel.PetrolPumpModel.ReceiptOfPump != null;
         }
 
         public event EventHandler CanExecuteChanged;

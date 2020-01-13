@@ -47,7 +47,7 @@ namespace LukasNicoTankstelle.Commands_Checkout
 
         public override bool CanExecute(object parameter)
         {
-            return true;
+            return checkout_ViewModel.Paid != null;
         }
 
         public event EventHandler CanExecuteChanged;

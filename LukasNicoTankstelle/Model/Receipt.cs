@@ -61,7 +61,7 @@ namespace LukasNicoTankstelle.Class
 
         public void SaveData()
         {
-            string filename = "Stadistiken.txt";
+            string filename = "Statistiken.txt";
 
             using (StreamWriter sw = new StreamWriter(filename,true))
             {
