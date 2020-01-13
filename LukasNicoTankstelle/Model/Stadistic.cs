@@ -12,10 +12,7 @@ namespace LukasNicoTankstelle.Class
 
 
         public Tuple<DateTime,double,double>[] Stadistics { get; set; }
-        //public Stadistic(double amountPaid_, double amountLiter_)
-        //{
-        //    Stadistics
-        //}
+
 
         public Stadistic()
         {
@@ -37,6 +34,44 @@ namespace LukasNicoTankstelle.Class
 
                 }
             }
+        }
+
+        public double TotalWinLastYear()
+        {
+            double winLastYear = 0;
+            foreach (Tuple<DateTime, double, double>  s in Stadistics)
+            {
+                if (s.Item1 > DateTime.Today.AddYears(-1))
+                {
+                    winLastYear += s.Item2;
+                }
+            }
+            return winLastYear;
+        }
+
+        public double TotalWinLastMonth()
+        {
+            double winLastMonth = 0;
+            foreach (Tuple<DateTime, double, double> s in Stadistics)
+            {
+                if (s.Item1 > DateTime.Today.AddMonths(-1))
+                {
+                    winLastMonth += s.Item2;
+                }
+            }
+            return winLastMonth;
+        }
+        public double TotalWinLastWeek()
+        {
+            double winLastWeek = 0;
+            foreach (Tuple<DateTime, double, double> s in Stadistics)
+            {
+                if (s.Item1 > DateTime.Today.AddDays(-7))
+                {
+                    winLastWeek += s.Item2;
+                }
+            }
+            return winLastWeek;
         }
     }
 }

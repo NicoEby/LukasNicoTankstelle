@@ -26,6 +26,7 @@ namespace LukasNicoTankstelle.Commands_Checkout
             string message = $"Bezogener Treibstoffbetrag: {receipt.AmountPaid}CHF \n Bezogener Literanzahl: {receipt.AmountLiter}L \n Bezogener Treibstoffart {receipt.TypeOfGasoline} \n Datum {receipt.Date} ";
             string title = "Quittung ";
             MessageBox.Show(message, title);
+            
         }
 
         void worker_DoWork(object sender, DoWorkEventArgs e)
