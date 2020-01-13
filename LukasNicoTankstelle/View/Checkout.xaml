@@ -59,9 +59,9 @@
                 </ComboBox.ItemTemplate>
             </ComboBox>
             <Label Grid.Row="2" Grid.Column="0" Margin="0 3 0 3">Bezahlt</Label>
-            <TextBox Grid.Row="2" Grid.Column="1" IsReadOnly="True" Margin="0 3 0 3" Text="{Binding Paid, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="1" IsReadOnly="True" Margin="0 3 0 3" Text="{Binding Paid, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}"></TextBox>
             <Label Grid.Row="3" Grid.Column="0" Margin="0 3 0 3">Kosten:</Label>
-            <TextBox Grid.Row="3" Grid.Column="1" IsReadOnly="True" Margin="0 3 0 3"  Text="{Binding Cost}"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="1" IsReadOnly="True" Margin="0 3 0 3"  Text="{Binding ElementName=PumpsComboBox,Path=SelectedItem.AmountOwned}"></TextBox>
 
 
         </Grid>
