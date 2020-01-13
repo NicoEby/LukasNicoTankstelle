@@ -32,7 +32,7 @@
                 <DataTemplate>
                     <StackPanel>
                         <TextBlock Text="{Binding GasolineType}"/>
-                        <TextBlock Text="{Binding PricePerLiter, StringFormat=Price perL Liter: {0}}"/>
+                        <TextBlock Text="{Binding PricePerLiter, StringFormat=Price per Liter: {0}}"/>
                     </StackPanel>
                 </DataTemplate>
             </ComboBox.ItemTemplate>

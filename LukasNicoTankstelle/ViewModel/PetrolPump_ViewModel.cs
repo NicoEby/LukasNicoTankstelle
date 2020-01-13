@@ -21,9 +21,10 @@ namespace LukasNicoTankstelle.ViewModel
             FinishedPumping = new FinishedCommand(this);
             LiterGetankt = 0;
             IsPumping = false;
-
+            allPumpVMs.Add(this);
         }
 
+        static List<PetrolPump_ViewModel> allPumpVMs = new List<PetrolPump_ViewModel>();
         private bool isPumping;
         public bool IsPumping
         {
@@ -83,6 +84,22 @@ namespace LukasNicoTankstelle.ViewModel
         {
             get { return finishedPumping; }
             set { finishedPumping = value; }
+        }
+
+        public static void PumpIsPayedVM(object sender, EventArgs e)
+        {
+            foreach(PetrolPump_ViewModel pumpVM in allPumpVMs)
+            {
+                PetrolPump pumpModel = pumpVM.PetrolPumpModel =
+                    pumpVM.MainWindowViewModel.PetrolPumps
+                    .FirstOrDefault(x => x.Number == pumpVM.PetrolPumpModel.Number);
+                if(pumpModel.WasUsed == false)
+                {
+                    pumpVM.Cost = 0;
+                    pumpVM.LiterGetankt = 0;
+                    pumpVM.IsPumping = false;
+                }
+            }
         }
     }
 }

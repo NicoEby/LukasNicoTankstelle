@@ -14,6 +14,7 @@ namespace LukasNicoTankstelle.Model
         public Dictionary<double,int> Cash = new Dictionary<double,int>();
         public Checkout(int number,int _5Rap, int _10Rap, int _20Rap,int _50Rap, int _1CHF, int _2CHF, int _5CHF, int _10CHF, int _20CHF, int _50CHF,int _100CHF, int _200CHF)
         {
+            Number = number;
             Cash.Add(0.05,_5Rap);
             Cash.Add(0.1, _10Rap);
             Cash.Add(0.2, _20Rap);

@@ -43,10 +43,10 @@
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0" Margin="0 3 0 3">Checkout</Label>
             <!--<Button Grid.Row="0" Grid.Column="1" Margin="621,-60,-527,70" Command="{Binding RefreshCommand}">Refresh</Button>-->
-            <ComboBox Grid.Row="0" Grid.Column="1"  ItemsSource="{Binding CheckOuts}" SelectedItem="{Binding ChosenCheckout, Mode=TwoWay}" SelectedIndex="0" >
+            <ComboBox Grid.Row="0" Grid.Column="1"  ItemsSource="{Binding CheckOuts}" SelectedItem="{Binding ChosenCheckout, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}" SelectedIndex="0" >
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding Number}"></TextBlock>
+                        <TextBlock Text="{Binding Number, StringFormat=Kasse {0} }"></TextBlock>
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
@@ -54,7 +54,7 @@
             <ComboBox Name="PumpsComboBox" Grid.Row="1" Grid.Column="1" Margin="0 3 0 3" ItemsSource="{Binding PetrolPumps, UpdateSourceTrigger=PropertyChanged, NotifyOnSourceUpdated=True}" SelectedItem="{Binding ChosenPump, Mode=TwoWay}" SelectedIndex="0">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding Number}"></TextBlock>
+                        <TextBlock Text="{Binding Number, StringFormat=Pumpe {0}}"></TextBlock>
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>

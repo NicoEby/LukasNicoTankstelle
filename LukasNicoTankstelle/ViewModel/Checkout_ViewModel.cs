@@ -119,7 +119,7 @@ namespace LukasNicoTankstelle.ViewModel
 
 
         public double? Cost
-        {
+        { 
             get { return cost; }
             set
             {
@@ -260,6 +260,14 @@ namespace LukasNicoTankstelle.ViewModel
         }
 
         public static void PumpWasUsedVM(object sender, EventArgs e)
+        {
+            foreach (Checkout_ViewModel checkoutVM in allCheckoutVMs)
+            {
+                checkoutVM.PetrolPumps = checkoutVM.PetrolStations.GetAllUsedPumps();
+            }
+        }
+
+        public static void PumpIsPayedVM(object sender, EventArgs e)
         {
             foreach (Checkout_ViewModel checkoutVM in allCheckoutVMs)
             {

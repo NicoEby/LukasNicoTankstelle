@@ -68,13 +68,25 @@ namespace LukasNicoTankstelle.Class
             Taps = taps;
             WasUsed = false;
             PumpWasUsed += Checkout_ViewModel.PumpWasUsedVM;
+            PumpIsPayed += Checkout_ViewModel.PumpIsPayedVM;
+            PumpIsPayed += PetrolPump_ViewModel.PumpIsPayedVM;
         }
 
         public event EventHandler PumpWasUsed;
+        public event EventHandler PumpIsPayed;
 
         protected virtual void OnPumpWasUsed(EventArgs e)
         {
             EventHandler handler = PumpWasUsed;
+            if (handler != null)
+            {
+                handler(this, e);
+            }
+        }
+
+        protected virtual void OnPumpIsPayed(EventArgs e)
+        {
+            EventHandler handler = PumpIsPayed;
             if (handler != null)
             {
                 handler(this, e);
@@ -93,8 +105,8 @@ namespace LukasNicoTankstelle.Class
         public void OpenPump(PetrolPump usedPump)
         {
             usedPump.WasUsed = false;
-            usedPump.AmountOwned = 0;          
-
+            usedPump.AmountOwned = 0;
+            OnPumpIsPayed(EventArgs.Empty);
         }
 
     }

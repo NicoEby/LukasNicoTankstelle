@@ -34,14 +34,10 @@ namespace LukasNicoTankstelle.Commands
             receipt.SaveData();
         }
 
-        void worker_DoWork(object sender, DoWorkEventArgs e)
-        {
-
-        }
-
         public override bool CanExecute(object parameter)
         {
-            return checkout_ViewModel.ChosenPump != null;
+            return checkout_ViewModel.ChosenPump != null
+                && checkout_ViewModel.ChosenCheckout != null;
         }
 
         public event EventHandler CanExecuteChanged;
