@@ -33,7 +33,7 @@ namespace LukasNicoTankstelle.ViewModel
         //public List<PetrolPump> PetrolPumps { get; set; }
         public ObservableCollection<Checkout> CheckOuts { get; set; }
 
-        private double cost = 100;
+        private double cost ;
         private double paid = 0;
         private int numberOf5RapCoins = 0;
         private int numberOf10RapCoins = 0;
