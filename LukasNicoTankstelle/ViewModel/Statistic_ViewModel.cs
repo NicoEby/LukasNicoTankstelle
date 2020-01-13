@@ -9,9 +9,9 @@ using System.Text;
 namespace LukasNicoTankstelle.ViewModel
 {
     
-    public class Stadistic_ViewModel 
+    public class Statistic_ViewModel 
     {
-        public Stadistic Stadistic_ { get; set; }
+        public Statistic Statistic_ { get; set; }
 
         private double lastYear;
         private double lastMonth;
@@ -51,14 +51,14 @@ namespace LukasNicoTankstelle.ViewModel
             }
         }
 
-        public Stadistic_ViewModel()
+        public Statistic_ViewModel()
         {
-            Stadistic_ = new Stadistic();
+            Statistic_ = new Statistic();
 
-            LastYear = Stadistic_.TotalWinLastYear();
-            LastMonth = Stadistic_.TotalWinLastMonth();
-            LastWeek = Stadistic_.TotalWinLastWeek();
-            LastDay = Stadistic_.TotalWinLastDay();
+            LastYear = Statistic_.TotalWinLastYear();
+            LastMonth = Statistic_.TotalWinLastMonth();
+            LastWeek = Statistic_.TotalWinLastWeek();
+            LastDay = Statistic_.TotalWinLastDay();
 
         }
     }

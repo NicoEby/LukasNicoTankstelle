@@ -18,13 +18,13 @@ namespace LukasNicoTankstelle.View
     /// <summary>
     /// Interaction logic for Stadistic.xaml
     /// </summary>
-    public partial class Stadistic : UserControl
+    public partial class Statistic : UserControl
     {
-        public Stadistic()
+        public Statistic()
         {
             InitializeComponent();
-            Stadistic_ViewModel stadistic_ViewModel = new Stadistic_ViewModel();
-            DataContext = stadistic_ViewModel;
+            Statistic_ViewModel statistic_ViewModel = new Statistic_ViewModel();
+            DataContext = statistic_ViewModel;
         }
     }
 }

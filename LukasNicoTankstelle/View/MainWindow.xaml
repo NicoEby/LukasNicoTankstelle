@@ -38,7 +38,7 @@
                 <vm:Checkout DataContext="{Binding Path=CheckoutVM}"/>
             </TabItem>
             <TabItem Header="Statistik">
-                <vm:Stadistic DataContext="{Binding Path=StadisticVM}"/>
+                <vm:Statistic DataContext="{Binding Path=StatisticVM}"/>
             </TabItem>
         </TabControl>
     </Grid>
