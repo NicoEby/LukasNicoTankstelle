@@ -46,6 +46,8 @@ namespace LukasNicoTankstelle.ViewModel
         private ICommand changeMoneyCommand;
         private ICommand refreshCommand;
         private ICommand receiptCommand;
+        private Boolean isPayingCreditCard;
+        private Boolean isPaying=false;
 
 
 

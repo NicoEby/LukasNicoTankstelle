@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,6 +56,20 @@ namespace LukasNicoTankstelle.Class
             AmountLiter = amountLiter_;
             AmountPaid = amountPaid_;
             TypeOfGasoline = gasolineType_;
+
+        }
+
+        public void SaveData()
+        {
+            string filename = "Stadistiken.txt";
+
+            using (StreamWriter sw = new StreamWriter(filename,true))
+            {
+                sw.WriteLine($"{AmountLiter},{AmountPaid},{Date}");
+
+            }
+
+
 
         }
     }

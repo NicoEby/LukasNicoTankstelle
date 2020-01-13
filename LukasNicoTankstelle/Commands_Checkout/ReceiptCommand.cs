@@ -23,7 +23,7 @@ namespace LukasNicoTankstelle.Commands_Checkout
         public override void Execute(object parameter)
         {
             Receipt receipt=checkout_ViewModel.PetrolPumpModel.ReceiptOfPump;
-            string message = $"Bezogener Treibstoffbetrag: {receipt.AmountLiter} \n Bezogener Literanzahl: {receipt.AmountLiter} \n Bezogener Treibstoffart {receipt.TypeOfGasoline} \n Datum {receipt.Date} ";
+            string message = $"Bezogener Treibstoffbetrag: {receipt.AmountPaid}CHF \n Bezogener Literanzahl: {receipt.AmountLiter}L \n Bezogener Treibstoffart {receipt.TypeOfGasoline} \n Datum {receipt.Date} ";
             string title = "Quittung ";
             MessageBox.Show(message, title);
         }
