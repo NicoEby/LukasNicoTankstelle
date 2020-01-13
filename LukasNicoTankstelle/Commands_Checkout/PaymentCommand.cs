@@ -26,42 +26,42 @@ namespace LukasNicoTankstelle.Commands
             checkout_ViewModel.Paid= checkout_ViewModel.Paid + m;
             checkout_ViewModel.CheckOuts[1].Cash[m] +=1;
 
-            switch (m.ToString())
+            switch (m)
             {
-                case "0.05":
+                case 0.05:
                     checkout_ViewModel.NumberOf5RapCoins += 1;
                     break;
-                case "0.1":
+                case 0.1:
                     checkout_ViewModel.NumberOf10RapCoins += 1;
                     break;
-                case "0.2":
+                case 0.2:
                     checkout_ViewModel.NumberOf20RapCoins += 1;
                     break;
-                case "0.5":
+                case 0.5:
                     checkout_ViewModel.NumberOf50RapCoins += 1;
                     break;
-                case "1":
+                case 1:
                     checkout_ViewModel.NumberOf1CHFCoins += 1;
                     break;
-                case "2":
+                case 2:
                     checkout_ViewModel.NumberOf2CHFCoins += 1;
                     break;
-                case "5":
+                case 5:
                     checkout_ViewModel.NumberOf5CHFCoins += 1;
                     break;
-                case "10":
+                case 10:
                     checkout_ViewModel.NumberOf10CHFCoins += 1;
                     break;
-                case "20":
+                case 20:
                     checkout_ViewModel.NumberOf20CHFCoins += 1;
                     break;
-                case "50":
+                case 50:
                     checkout_ViewModel.NumberOf50CHFCoins += 1;
                     break;
-                case "100":
+                case 100:
                     checkout_ViewModel.NumberOf100CHFCoins += 1;
                     break;
-                case "200":
+                case 200:
                     checkout_ViewModel.NumberOf200CHFCoins += 1;
                     break;
 
@@ -78,7 +78,7 @@ namespace LukasNicoTankstelle.Commands
 
         public override bool CanExecute(object parameter)
         {
-            return true;
+            return checkout_ViewModel.ChosenPump != null;
         }
 
         public event EventHandler CanExecuteChanged;

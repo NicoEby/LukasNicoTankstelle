@@ -27,7 +27,7 @@ namespace LukasNicoTankstelle.Commands
             string title = "Kreditkarte ";
             MessageBox.Show(message, title);
 
-            checkout_ViewModel.Paid = checkout_ViewModel.Cost;
+            checkout_ViewModel.Paid = checkout_ViewModel.Cost ?? 0;
             checkout_ViewModel.PetrolPumpModel = checkout_ViewModel.PetrolPumps[0];
             checkout_ViewModel.PetrolPumpModel.OpenPump(checkout_ViewModel.PetrolPumpModel);
             Receipt receipt = checkout_ViewModel.PetrolPumpModel.ReceiptOfPump;
@@ -41,7 +41,7 @@ namespace LukasNicoTankstelle.Commands
 
         public override bool CanExecute(object parameter)
         {
-            return true;
+            return checkout_ViewModel.ChosenPump != null;
         }
 
         public event EventHandler CanExecuteChanged;

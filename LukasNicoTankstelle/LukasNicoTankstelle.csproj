@@ -58,7 +58,6 @@
     <Compile Include="Commands_Checkout\CancelPaymentCommand.cs" />
     <Compile Include="Commands_Checkout\ChangeMoneyCommand.cs" />
     <Compile Include="Commands_Checkout\CreditCardCommand.cs" />
-    <Compile Include="Commands_Checkout\FinishedCommand.cs" />
     <Compile Include="Commands_Checkout\PaymentCommand.cs" />
     <Compile Include="Commands_Checkout\ReceiptCommand.cs" />
     <Compile Include="Commands_Checkout\RefreshCommand.cs" />

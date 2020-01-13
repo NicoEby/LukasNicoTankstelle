@@ -33,7 +33,7 @@ namespace LukasNicoTankstelle.ViewModel
         //public List<PetrolPump> PetrolPumps { get; set; }
         public ObservableCollection<Checkout> CheckOuts { get; set; }
 
-        private double cost ;
+        private double? cost;
         private double paid = 0;
         private int numberOf5RapCoins = 0;
         private int numberOf10RapCoins = 0;
@@ -54,7 +54,33 @@ namespace LukasNicoTankstelle.ViewModel
         private ICommand refreshCommand;
         private ICommand receiptCommand;
         private Boolean isPayingCreditCard;
-        private Boolean isPaying=false;
+        private Boolean isPaying = false;
+        private PetrolPump chosenPump;
+        private Checkout chosenCheckout;
+
+        public PetrolPump ChosenPump
+        {
+            get { return chosenPump; }
+            set
+            {
+                chosenPump = value;
+                OnPropertyChanged(nameof(ChosenPump));
+                if (ChosenPump != null)
+                {
+                    Cost = ChosenPump.AmountOwned;
+                }
+            }
+        }
+
+        public Checkout ChosenCheckout
+        {
+            get { return chosenCheckout; }
+            set
+            {
+                chosenCheckout = value;
+                OnPropertyChanged(nameof(ChosenCheckout));
+            }
+        }
 
 
 
@@ -92,7 +118,7 @@ namespace LukasNicoTankstelle.ViewModel
         public PetrolPump PetrolPumpModel { get; set; }
 
 
-        public double Cost
+        public double? Cost
         {
             get { return cost; }
             set
@@ -233,9 +259,9 @@ namespace LukasNicoTankstelle.ViewModel
             }
         }
 
-        public static void PumpWasUsedVM (object sender, EventArgs e)
+        public static void PumpWasUsedVM(object sender, EventArgs e)
         {
-            foreach(Checkout_ViewModel checkoutVM in allCheckoutVMs)
+            foreach (Checkout_ViewModel checkoutVM in allCheckoutVMs)
             {
                 checkoutVM.PetrolPumps = checkoutVM.PetrolStations.GetAllUsedPumps();
             }
@@ -251,7 +277,7 @@ namespace LukasNicoTankstelle.ViewModel
                 CheckOuts.Add(b);
             }
 
-
+            ChosenPump = null;
             PaymentCommand = new PaymentCommand(this);
             CreditCardCommand = new CreditCardCommand(this);
             CancelPaymentCommand = new CancelPaymentCommand(this);
