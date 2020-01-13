@@ -86,6 +86,11 @@ namespace LukasNicoTankstelle.ViewModel
             set { finishedPumping = value; }
         }
 
+        /// <summary>
+        /// Nachdem der offene Betrag für die Pumpe beglichen wurde, wird diese wieder reseted und freigegeben
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public static void PumpIsPayedVM(object sender, EventArgs e)
         {
             foreach(PetrolPump_ViewModel pumpVM in allPumpVMs)

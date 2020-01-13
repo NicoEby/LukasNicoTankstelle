@@ -23,8 +23,8 @@ namespace LukasNicoTankstelle.Commands
 
         public override void Execute(object parameter)
         {
-            string message = "Zahlung gemacht";
             string title = "Kreditkarte ";
+            string message = "Du hast gerade " + checkout_ViewModel.Paid + " Fr. mit Kreditkarte bezahlt";
             MessageBox.Show(message, title);
 
             checkout_ViewModel.Paid = checkout_ViewModel.Cost ?? 0;
