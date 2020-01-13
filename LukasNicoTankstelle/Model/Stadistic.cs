@@ -11,7 +11,7 @@ namespace LukasNicoTankstelle.Class
     {
 
 
-        public Tuple<DateTime,double,double>[] Stadistics { get; set; }
+        public List<Tuple<DateTime, double, double, string>> Stadistics { get; set; } 
 
 
         public Stadistic()
@@ -20,6 +20,7 @@ namespace LukasNicoTankstelle.Class
             // create StreamReader-object
             using (StreamReader sr = new StreamReader(new FileStream(filename,FileMode.Open,FileAccess.Read),Encoding.Default))
             {
+                Stadistics = new List<Tuple<DateTime, double, double, string>>();
                 for (int count = 0; sr.Peek() >= 0; count++)
                 {
                     //Read line per line
@@ -28,9 +29,10 @@ namespace LukasNicoTankstelle.Class
                     DateTime date = Convert.ToDateTime(strlist[0]);
                     double AmountPaid = Convert.ToDouble(strlist[1]);
                     double AmountLiter = Convert.ToDouble(strlist[2]);
-                    Tuple<DateTime, double, double> newTupleStadistic = new Tuple<DateTime, double, double>(date, AmountPaid, AmountLiter);
+                    string gasolineType = strlist[3] ;
+                    Tuple<DateTime, double, double,string> newTupleStadistic = new Tuple<DateTime, double, double,string>(date, AmountPaid, AmountLiter,gasolineType);
 
-                    Stadistics[count] = newTupleStadistic;
+                    Stadistics.Add(newTupleStadistic);
 
                 }
             }
@@ -39,7 +41,7 @@ namespace LukasNicoTankstelle.Class
         public double TotalWinLastYear()
         {
             double winLastYear = 0;
-            foreach (Tuple<DateTime, double, double>  s in Stadistics)
+            foreach (Tuple<DateTime, double, double,string>  s in Stadistics)
             {
                 if (s.Item1 > DateTime.Today.AddYears(-1))
                 {
@@ -52,7 +54,7 @@ namespace LukasNicoTankstelle.Class
         public double TotalWinLastMonth()
         {
             double winLastMonth = 0;
-            foreach (Tuple<DateTime, double, double> s in Stadistics)
+            foreach (Tuple<DateTime, double, double,string> s in Stadistics)
             {
                 if (s.Item1 > DateTime.Today.AddMonths(-1))
                 {
@@ -64,7 +66,7 @@ namespace LukasNicoTankstelle.Class
         public double TotalWinLastWeek()
         {
             double winLastWeek = 0;
-            foreach (Tuple<DateTime, double, double> s in Stadistics)
+            foreach (Tuple<DateTime, double, double,string> s in Stadistics)
             {
                 if (s.Item1 > DateTime.Today.AddDays(-7))
                 {
@@ -73,5 +75,34 @@ namespace LukasNicoTankstelle.Class
             }
             return winLastWeek;
         }
+        public double TotalWinLastDay()
+        {
+            double winLastDay = 0;
+            foreach (Tuple<DateTime, double, double,string> s in Stadistics)
+            {
+                if (s.Item1 > DateTime.Today.AddDays(-1))
+                {
+                    winLastDay += s.Item2;
+                }
+            }
+            return winLastDay;
+        }
+        //public double TotalLiterProGasolineTypeLastDay()
+        //{
+        //    double totalLiterPetrol = 0;
+        //    double totalLiterPetrol = 0;
+        //    double totalLiterPetrol = 0;
+        //    foreach (Tuple<DateTime, double, double, string> s in Stadistics)
+        //    {
+        //        if (s.Item1 > DateTime.Today.AddDays(-1))
+        //        {
+        //            if (s.Item4 == "Petrol")
+        //            {
+
+        //            }
+        //        }
+        //    }
+        //    return winLastDay;
+        //}
     }
 }

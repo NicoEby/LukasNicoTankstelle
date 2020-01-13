@@ -11,20 +11,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace LukasNicoTankstelle.View
 {
     /// <summary>
-    /// Interaction logic for PetrolPumpView.xaml
+    /// Interaction logic for Stadistic.xaml
     /// </summary>
-    public partial class PetrolPumpView : UserControl
+    public partial class Stadistic : Window
     {
-        public PetrolPumpView()
+        public Stadistic()
         {
             InitializeComponent();
-
+            Stadistic_ViewModel stadistic_ViewModel = new Stadistic_ViewModel();
+            DataContext = stadistic_ViewModel;
         }
     }
 }

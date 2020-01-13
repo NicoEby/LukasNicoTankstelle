@@ -68,11 +68,15 @@
     <Compile Include="Model\Checkout.cs" />
     <Compile Include="ViewModel\Checkout_ViewModel.cs" />
     <Compile Include="ViewModel\PetrolPump_ViewModel.cs" />
+    <Compile Include="ViewModel\Stadistic_ViewModel.cs" />
     <Compile Include="View\Checkout.xaml.cs">
       <DependentUpon>Checkout.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PetrolPumpView.xaml.cs">
       <DependentUpon>PetrolPumpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Stadistic.xaml.cs">
+      <DependentUpon>Stadistic.xaml</DependentUpon>
     </Compile>
     <Page Include="View\Checkout.xaml">
       <SubType>Designer</SubType>
@@ -102,6 +106,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\PetrolPumpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Stadistic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

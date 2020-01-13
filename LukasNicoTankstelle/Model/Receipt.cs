@@ -65,7 +65,7 @@ namespace LukasNicoTankstelle.Class
 
             using (StreamWriter sw = new StreamWriter(filename,true))
             {
-                sw.WriteLine($"{Date},{AmountLiter},{AmountPaid}");
+                sw.WriteLine($"{Date},{AmountLiter},{AmountPaid},{TypeOfGasoline}");
 
             }
 
