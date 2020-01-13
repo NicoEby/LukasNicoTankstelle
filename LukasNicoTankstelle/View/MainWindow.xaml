@@ -37,6 +37,9 @@
             <TabItem Header="Kasse">
                 <vm:Checkout DataContext="{Binding Path=CheckoutVM}"/>
             </TabItem>
+            <TabItem Header="Statistik">
+                <vm:Stadistic DataContext="{Binding Path=StadisticVM}"/>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>

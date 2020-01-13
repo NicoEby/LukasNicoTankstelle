@@ -18,7 +18,7 @@ namespace LukasNicoTankstelle.View
     /// <summary>
     /// Interaction logic for Stadistic.xaml
     /// </summary>
-    public partial class Stadistic : Window
+    public partial class Stadistic : UserControl
     {
         public Stadistic()
         {
